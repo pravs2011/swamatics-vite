@@ -1004,142 +1004,6 @@ const HomePage = () => {
               <div className="testimonial-header">
                 <div className="client-avatar">
                   <img
-                    src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face"
-                    alt="Rajesh Kumar"
-                  />
-                </div>
-                <div className="client-info">
-                  <h4>Rajesh Kumar</h4>
-                  <p>Chief Engineer</p>
-                  <span>Tata Steel Limited</span>
-                </div>
-                <div className="review-stars">
-                  {[...Array(5)].map((_, i) => (
-                    <svg
-                      key={i}
-                      width="16"
-                      height="16"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M12 2L15.09 8.26L22 9L17 14L18.18 21L12 17.77L5.82 21L7 14L2 9L8.91 8.26L12 2Z"
-                        fill="#FFD700"
-                      />
-                    </svg>
-                  ))}
-                </div>
-              </div>
-              <div className="testimonial-content">
-                <p>
-                  "Swamatics delivered exceptional blower systems for our steel
-                  manufacturing facility. Their technical expertise and
-                  commitment to quality exceeded our expectations. The energy
-                  efficiency improvements have significantly reduced our
-                  operational costs."
-                </p>
-              </div>
-              <div className="testimonial-footer">
-                <span className="review-date">2 months ago</span>
-                <span className="verified-badge">✓ Verified Purchase</span>
-              </div>
-            </div>
-
-            <div className="testimonial-card">
-              <div className="testimonial-header">
-                <div className="client-avatar">
-                  <img
-                    src="https://images.unsplash.com/photo-1494790108755-2616b612b77c?w=150&h=150&fit=crop&crop=face"
-                    alt="Priya Sharma"
-                  />
-                </div>
-                <div className="client-info">
-                  <h4>Priya Sharma</h4>
-                  <p>Project Manager</p>
-                  <span>L&T Construction</span>
-                </div>
-                <div className="review-stars">
-                  {[...Array(5)].map((_, i) => (
-                    <svg
-                      key={i}
-                      width="16"
-                      height="16"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M12 2L15.09 8.26L22 9L17 14L18.18 21L12 17.77L5.82 21L7 14L2 9L8.91 8.26L12 2Z"
-                        fill="#FFD700"
-                      />
-                    </svg>
-                  ))}
-                </div>
-              </div>
-              <div className="testimonial-content">
-                <p>
-                  "Outstanding service from start to finish. The team at
-                  Swamatics provided comprehensive support throughout our water
-                  treatment plant project. Their innovative solutions and timely
-                  delivery made our project a huge success."
-                </p>
-              </div>
-              <div className="testimonial-footer">
-                <span className="review-date">1 month ago</span>
-                <span className="verified-badge">✓ Verified Purchase</span>
-              </div>
-            </div>
-
-            <div className="testimonial-card">
-              <div className="testimonial-header">
-                <div className="client-avatar">
-                  <img
-                    src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face"
-                    alt="Michael Chen"
-                  />
-                </div>
-                <div className="client-info">
-                  <h4>Michael Chen</h4>
-                  <p>Operations Director</p>
-                  <span>Pfizer Manufacturing</span>
-                </div>
-                <div className="review-stars">
-                  {[...Array(5)].map((_, i) => (
-                    <svg
-                      key={i}
-                      width="16"
-                      height="16"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M12 2L15.09 8.26L22 9L17 14L18.18 21L12 17.77L5.82 21L7 14L2 9L8.91 8.26L12 2Z"
-                        fill="#FFD700"
-                      />
-                    </svg>
-                  ))}
-                </div>
-              </div>
-              <div className="testimonial-content">
-                <p>
-                  "The precision vacuum systems delivered by Swamatics have been
-                  flawless in our pharmaceutical production. Their attention to
-                  detail and understanding of our stringent requirements is
-                  commendable. Highly recommended!"
-                </p>
-              </div>
-              <div className="testimonial-footer">
-                <span className="review-date">3 weeks ago</span>
-                <span className="verified-badge">✓ Verified Purchase</span>
-              </div>
-            </div>
-
-            <div className="testimonial-card">
-              <div className="testimonial-header">
-                <div className="client-avatar">
-                  <img
                     src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=150&h=150&fit=crop&crop=face"
                     alt="David Johnson"
                   />
@@ -1395,6 +1259,320 @@ const HomePage = () => {
         </div>
       </section>
 
+      {/* Subscribe Newsletter */}
+      <section className="subscribe-newsletter-section">
+        <div className="subscribe-newsletter-container">
+          <div className="newsletter-content">
+            <div className="newsletter-header">
+              <h2>Stay Updated with Industry Insights</h2>
+              <p>
+                Subscribe to our newsletter and get the latest updates on
+                industrial innovations, product launches, and expert insights
+                delivered directly to your inbox.
+              </p>
+            </div>
+
+            <div className="newsletter-benefits">
+              <div className="benefit-item">
+                <div className="benefit-icon">
+                  <svg
+                    width="32"
+                    height="32"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M13 2L3 14H12L11 22L21 10H12L13 2Z"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </svg>
+                </div>
+                <div className="benefit-text">
+                  <h4>Latest Technology Updates</h4>
+                  <p>
+                    Be the first to know about cutting-edge industrial solutions
+                  </p>
+                </div>
+              </div>
+
+              <div className="benefit-item">
+                <div className="benefit-icon">
+                  <svg
+                    width="32"
+                    height="32"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M9 11H15M9 15H15M17 21L12 16L7 21V5C7 4.46957 7.21071 3.96086 7.58579 3.58579C7.96086 3.21071 8.46957 3 9 3H15C15.5304 3 16.0391 3.21071 16.4142 3.58579C16.7893 3.96086 17 4.46957 17 5V21Z"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </svg>
+                </div>
+                <div className="benefit-text">
+                  <h4>Exclusive Case Studies</h4>
+                  <p>Access detailed project insights and success stories</p>
+                </div>
+              </div>
+
+              <div className="benefit-item">
+                <div className="benefit-icon">
+                  <svg
+                    width="32"
+                    height="32"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <circle
+                      cx="12"
+                      cy="12"
+                      r="3"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                    />
+                    <path
+                      d="M19.4 15A1.65 1.65 0 0 0 20.85 13.35V10.65A1.65 1.65 0 0 0 19.4 9L17.7 7.35A1.65 1.65 0 0 0 15.35 7.35H8.65A1.65 1.65 0 0 0 6.3 7.35L4.6 9A1.65 1.65 0 0 0 3.15 10.65V13.35A1.65 1.65 0 0 0 4.6 15L6.3 16.65A1.65 1.65 0 0 0 8.65 16.65H15.35A1.65 1.65 0 0 0 17.7 16.65L19.4 15Z"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                    />
+                  </svg>
+                </div>
+                <div className="benefit-text">
+                  <h4>Industry Best Practices</h4>
+                  <p>Learn from expert recommendations and technical guides</p>
+                </div>
+              </div>
+
+              <div className="benefit-item">
+                <div className="benefit-icon">
+                  <svg
+                    width="32"
+                    height="32"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M16 21V19C16 17.9391 15.5786 16.9217 14.8284 16.1716C14.0783 15.4214 13.0609 15 12 15H5C3.93913 15 2.92172 15.4214 2.17157 16.1716C1.42143 16.9217 1 17.9391 1 19V21"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                    <circle
+                      cx="8.5"
+                      cy="7"
+                      r="4"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                    />
+                    <path
+                      d="M20 8V14L17 11"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </svg>
+                </div>
+                <div className="benefit-text">
+                  <h4>Expert Webinars</h4>
+                  <p>Invitations to exclusive online sessions and workshops</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="newsletter-form-section">
+            <div className="form-container">
+              <div className="form-header">
+                <h3>Join 5,000+ Industry Professionals</h3>
+                <p>Get weekly insights delivered to your inbox</p>
+              </div>
+
+              <form className="newsletter-form">
+                <div className="input-group">
+                  <div className="input-wrapper">
+                    <input
+                      type="email"
+                      placeholder="Enter your email address"
+                      required
+                      className="email-input"
+                    />
+                    <div className="input-icon">
+                      <svg
+                        width="20"
+                        height="20"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M4 4H20C21.1 4 22 4.9 22 6V18C22 19.1 21.1 20 20 20H4C2.9 20 2 19.1 2 18V6C2 4.9 2.9 4 4 4Z"
+                          stroke="currentColor"
+                          strokeWidth="2"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        />
+                        <polyline
+                          points="22,6 12,13 2,6"
+                          stroke="currentColor"
+                          strokeWidth="2"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        />
+                      </svg>
+                    </div>
+                  </div>
+                  <button type="submit" className="subscribe-btn">
+                    <span>Subscribe Now</span>
+                    <svg
+                      width="20"
+                      height="20"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M22 2L11 13"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                      <path
+                        d="M22 2L15 22L11 13L2 9L22 2Z"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                    </svg>
+                  </button>
+                </div>
+
+                <div className="newsletter-features">
+                  <div className="feature-badge">
+                    <svg
+                      width="16"
+                      height="16"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M9 12L11 14L15 10"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                      <path
+                        d="M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                      />
+                    </svg>
+                    <span>No spam, ever</span>
+                  </div>
+                  <div className="feature-badge">
+                    <svg
+                      width="16"
+                      height="16"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M12 22S8 18 8 14V7L12 5L16 7V14C16 18 12 22 12 22Z"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                    </svg>
+                    <span>Privacy protected</span>
+                  </div>
+                  <div className="feature-badge">
+                    <svg
+                      width="16"
+                      height="16"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M18 6L6 18"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                      <path
+                        d="M6 6L18 18"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                    </svg>
+                    <span>Unsubscribe anytime</span>
+                  </div>
+                </div>
+
+                <div className="privacy-note">
+                  <p>
+                    By subscribing, you agree to our{" "}
+                    <a href="#" className="privacy-link">
+                      Privacy Policy
+                    </a>{" "}
+                    and consent to receive updates from our company.
+                  </p>
+                </div>
+              </form>
+
+              <div className="social-proof">
+                <div className="subscriber-count">
+                  <div className="count-number">5,000+</div>
+                  <div className="count-text">Active Subscribers</div>
+                </div>
+                <div className="subscriber-avatars">
+                  <div className="avatar-group">
+                    <img
+                      src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=40&h=40&fit=crop&crop=face"
+                      alt="Subscriber"
+                    />
+                    <img
+                      src="https://images.unsplash.com/photo-1494790108755-2616b612b77c?w=40&h=40&fit=crop&crop=face"
+                      alt="Subscriber"
+                    />
+                    <img
+                      src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=40&h=40&fit=crop&crop=face"
+                      alt="Subscriber"
+                    />
+                    <img
+                      src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=40&h=40&fit=crop&crop=face"
+                      alt="Subscriber"
+                    />
+                    <div className="more-count">+</div>
+                  </div>
+                  <div className="join-text">Join industry leaders</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Contact Section */}
       <section className="contact-section">
         <div className="contact-container">
@@ -1507,38 +1685,6 @@ const HomePage = () => {
                     <span>New York, NY 10001</span>
                   </div>
                 </div>
-
-                {/* <div className="contact-method">
-                  <div className="contact-icon">
-                    <svg
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <circle
-                        cx="12"
-                        cy="12"
-                        r="10"
-                        stroke="currentColor"
-                        strokeWidth="2"
-                      />
-                      <path
-                        d="M12 6V12L16 14"
-                        stroke="currentColor"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      />
-                    </svg>
-                  </div>
-                  <div className="contact-details">
-                    <h4>Business Hours</h4>
-                    <p>Monday - Friday: 9:00 AM - 6:00 PM</p>
-                    <span>Weekend: By appointment</span>
-                  </div>
-                </div> */}
               </div>
 
               <div className="social-links">
