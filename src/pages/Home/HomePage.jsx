@@ -205,25 +205,6 @@ const HomePage = () => {
             </div>
           </div>
 
-          {/* <div className="about-stats">
-            <div className="stat-card">
-              <div className="stat-number">150+</div>
-              <div className="stat-label">Projects Delivered</div>
-            </div>
-            <div className="stat-card">
-              <div className="stat-number">50+</div>
-              <div className="stat-label">Happy Clients</div>
-            </div>
-            <div className="stat-card">
-              <div className="stat-number">5+</div>
-              <div className="stat-label">Years Experience</div>
-            </div>
-            <div className="stat-card">
-              <div className="stat-number">24/7</div>
-              <div className="stat-label">Support Available</div>
-            </div>
-          </div> */}
-
           <div className="about-values">
             <h3>Our Core Values</h3>
             <div className="values-grid">
@@ -1527,7 +1508,7 @@ const HomePage = () => {
                   </div>
                 </div>
 
-                <div className="contact-method">
+                {/* <div className="contact-method">
                   <div className="contact-icon">
                     <svg
                       width="24"
@@ -1557,7 +1538,7 @@ const HomePage = () => {
                     <p>Monday - Friday: 9:00 AM - 6:00 PM</p>
                     <span>Weekend: By appointment</span>
                   </div>
-                </div>
+                </div> */}
               </div>
 
               <div className="social-links">
