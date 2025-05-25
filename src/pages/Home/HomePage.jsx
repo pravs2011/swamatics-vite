@@ -67,194 +67,122 @@ const HomePage = () => {
         </div>
       </section>
 
-      {/* Features Section */}
-      <section className="features-section">
-        <div className="features-header">
-          <h2>Our Expert Services</h2>
-          <p className="features-subtitle">
-            Comprehensive solutions designed to elevate your business to new
-            heights
-          </p>
+      {/* Products Section */}
+      <section className="products-section">
+        <div className="products-header">
+          <h2>Products At Glance</h2>
         </div>
-        <div className="features-grid">
-          <div className="feature-card">
-            <div className="feature-icon">
-              <svg
-                width="48"
-                height="48"
-                viewBox="0 0 24 24"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M12 2L2 7L12 12L22 7L12 2Z"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-                <path
-                  d="M2 17L12 22L22 17"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-                <path
-                  d="M2 12L12 17L22 12"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
+        <div className="products-grid">
+          <div className="product-card large-card">
+            <div className="product-image">
+              <img
+                src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+                alt="Bio Gas Blowers"
+              />
             </div>
-            <h3>Web Development</h3>
-            <p>
-              Transform your digital presence with cutting-edge web
-              applications. We craft responsive, scalable, and high-performance
-              websites using the latest technologies and frameworks.
-            </p>
-            <ul className="feature-highlights">
-              <li>Responsive Design</li>
-              <li>Modern Frameworks</li>
-              <li>SEO Optimized</li>
-              <li>Performance Focused</li>
-            </ul>
-            <div className="feature-badge">
-              <span>Full Stack</span>
-            </div>
-          </div>
-          <div className="feature-card">
-            <div className="feature-icon">
-              <svg
-                width="48"
-                height="48"
-                viewBox="0 0 24 24"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <rect
-                  x="5"
-                  y="2"
-                  width="14"
+            <div className="product-content">
+              <h3>Bio Gas Blowers, Compressors</h3>
+              <button className="learn-more-btn">
+                <span>Learn More</span>
+                <svg
+                  width="20"
                   height="20"
-                  rx="2"
-                  ry="2"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                />
-                <line
-                  x1="12"
-                  y1="18"
-                  x2="12.01"
-                  y2="18"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
-            </div>
-            <h3>Mobile Applications</h3>
-            <p>
-              Reach your audience anywhere with powerful mobile solutions. We
-              develop native and cross-platform applications that deliver
-              exceptional user experiences across all devices.
-            </p>
-            <ul className="feature-highlights">
-              <li>iOS & Android</li>
-              <li>Cross-Platform</li>
-              <li>Intuitive UX/UI</li>
-              <li>App Store Ready</li>
-            </ul>
-            <div className="feature-badge">
-              <span>Native & Hybrid</span>
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M5 12H19"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                  <path
+                    d="M12 5L19 12L12 19"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                </svg>
+              </button>
             </div>
           </div>
-          <div className="feature-card">
-            <div className="feature-icon">
-              <svg
-                width="48"
-                height="48"
-                viewBox="0 0 24 24"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M18 10H22L18 6L14 10H18Z"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-                <path
-                  d="M14 14H10L14 18L18 14H14Z"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-                <path
-                  d="M8 12H2L6 8L10 12H8Z"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-                <circle
-                  cx="12"
-                  cy="12"
-                  r="3"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                />
-              </svg>
+
+          <div className="product-card">
+            <div className="product-image">
+              <img
+                src="https://images.unsplash.com/photo-1565804318308-d85cff59fd6f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+                alt="Vacuum Pumps"
+              />
             </div>
-            <h3>Cloud Solutions</h3>
-            <p>
-              Scale your business with robust cloud infrastructure. Our
-              comprehensive cloud services ensure reliability, security, and
-              seamless scalability for your growing needs.
-            </p>
-            <ul className="feature-highlights">
-              <li>AWS & Azure</li>
-              <li>Auto Scaling</li>
-              <li>Security First</li>
-              <li>24/7 Monitoring</li>
-            </ul>
-            <div className="feature-badge">
-              <span>Enterprise Ready</span>
+            <div className="product-content">
+              <h3>Vacuum Pumps With Secondary Suction, Air Injection</h3>
+              <button className="learn-more-btn">
+                <span>Learn More</span>
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M5 12H19"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                  <path
+                    d="M12 5L19 12L12 19"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                </svg>
+              </button>
             </div>
           </div>
-        </div>
-        <div className="features-cta">
-          <p>Ready to transform your business?</p>
-          <button className="cta-button">
-            Get Started Today
-            <svg
-              width="20"
-              height="20"
-              viewBox="0 0 24 24"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M5 12H19"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
+
+          <div className="product-card">
+            <div className="product-image">
+              <img
+                src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+                alt="Turbo Blowers"
               />
-              <path
-                d="M12 5L19 12L12 19"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-            </svg>
-          </button>
+            </div>
+            <div className="product-content">
+              <h3>Turbo Blowers, Integrally Geared Type</h3>
+              <button className="learn-more-btn">
+                <span>Learn More</span>
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M5 12H19"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                  <path
+                    d="M12 5L19 12L12 19"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                </svg>
+              </button>
+            </div>
+          </div>
         </div>
       </section>
 
