@@ -324,40 +324,84 @@ const EngineeringDesign = () => {
       <section className="design-principles-section">
         <div className="design-principles-container">
           <div className="principles-content">
-            <h2>Our Design Principles</h2>
-            <p className="principles-description">
-              We incorporate appropriate health criteria and safety factors into
-              every business decision, ensuring the selection and placement of
-              personnel at appropriate levels with clear responsibilities.
-            </p>
+            <div className="section-header-enhanced">
+              <div className="section-badge">
+                <FaShieldAlt />
+                <span>Our Foundation</span>
+              </div>
+              <h2>Design Principles That Drive Excellence</h2>
+              <p className="principles-description">
+                We incorporate appropriate health criteria and safety factors
+                into every business decision, ensuring the selection and
+                placement of personnel at appropriate levels with clear
+                responsibilities.
+              </p>
+            </div>
 
-            <div className="principles-grid">
+            <div className="principles-grid-enhanced">
               {designPrinciples.map((principle, index) => (
-                <div key={index} className="principle-card">
-                  <div className="principle-icon">{principle.icon}</div>
+                <div
+                  key={index}
+                  className="principle-card-enhanced"
+                  data-index={index}
+                >
+                  <div className="principle-icon-wrapper">
+                    <div className="principle-icon-bg"></div>
+                    <div className="principle-icon">{principle.icon}</div>
+                  </div>
                   <div className="principle-content">
                     <h4>{principle.principle}</h4>
                     <p>{principle.description}</p>
+                  </div>
+                  <div className="principle-number">
+                    {String(index + 1).padStart(2, "0")}
                   </div>
                 </div>
               ))}
             </div>
           </div>
 
-          <div className="stats-card">
+          <div className="stats-card-enhanced">
+            <div className="stats-background-pattern"></div>
             <div className="stats-header">
-              <FaAward className="stats-icon" />
+              <div className="stats-icon-container">
+                <FaAward className="stats-icon" />
+              </div>
               <h3>Project Success Metrics</h3>
               <p>Delivering excellence across all project dimensions</p>
             </div>
 
-            <div className="stats-grid">
+            <div className="stats-grid-enhanced">
               {projectStats.map((stat, index) => (
-                <div key={index} className="stat-item">
-                  <div className="stat-value">{stat.value}</div>
-                  <div className="stat-label">{stat.label}</div>
+                <div
+                  key={index}
+                  className="stat-item-enhanced"
+                  data-index={index}
+                >
+                  <div
+                    className="stat-value"
+                    style={{ color: "white", fontSize: "2rem" }}
+                  >
+                    {stat.value}
+                  </div>
+                  <div
+                    className="stat-label"
+                    style={{ color: "white", fontSize: "1rem" }}
+                  >
+                    {stat.label}
+                  </div>
+                  <div className="stat-progress">
+                    <div className="stat-progress-bar"></div>
+                  </div>
                 </div>
               ))}
+            </div>
+
+            <div className="stats-footer">
+              <div className="stats-highlight">
+                <FaRocket />
+                <span>Trusted by industry leaders worldwide</span>
+              </div>
             </div>
           </div>
         </div>
