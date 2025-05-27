@@ -117,47 +117,97 @@ const TopMenu = () => {
     product: {
       sections: [
         {
-          title: "Products",
+          title: "Blower Division",
           links: [
             {
-              name: "Analytics Suite",
-              description: "Advanced analytics tools",
+              name: "Rotary Twin & Tri Lobe Blowers",
+              description: "Rotary Twin & Tri Lobe Blowers",
             },
             {
-              name: "Data Visualization",
-              description: "Beautiful charts and graphs",
+              name: "Process Gas Blowers",
+              description: "Process Gas Blowers/ Gas Boosters",
             },
             {
-              name: "Reporting Tools",
-              description: "Comprehensive reporting solution",
+              name: "Turbo Blowers",
+              description: "Turbo Blowers- Integrally Geared Type",
+            },
+            {
+              name: "Super Helical Hybrid Blower",
+              description: "Super Helical Hybrid Blower",
+            },
+            {
+              name: "Truck Blowers",
+              description: "Truck Blowers",
+            },
+            {
+              name: "Bio Gas Blowers",
+              description: "Bio Gas Blowers/Compressors",
+            },
+            {
+              name: "Vacuum Pumps",
+              description: "Vacuum Pumps With Secondary Suction/Air Injection",
+            },
+            {
+              name: "Rotary Sliding Vane Compressors",
+              description: "Rotary Sliding Vane Compressors",
+            },
+            {
+              name: "Centrifugal Blowers",
+              description: "Centrifugal Blowers",
+            },
+            {
+              name: "SR Series Blowers",
+              description: "SR Series Blowers",
             },
           ],
         },
         {
-          title: "Features",
-          links: [
-            { name: "Real-time Data", description: "Live data updates" },
-            {
-              name: "Custom Dashboards",
-              description: "Personalized dashboard views",
-            },
-            { name: "API Integration", description: "Connect with your tools" },
-          ],
-        },
-        {
-          title: "Enterprise",
+          title: "Vaccum Division",
           links: [
             {
-              name: "Team Collaboration",
-              description: "Work together seamlessly",
+              name: "Dry Screw Vacuum Pump",
+              description: "Dry Screw Vacuum Pump - Combined Variable Pitch",
             },
             {
-              name: "Advanced Security",
-              description: "Enterprise-grade security",
+              name: "Liquid Ring Vacuum Pump",
+              description: "Liquid Ring Vacuum Pump",
             },
-            { name: "Custom Solutions", description: "Tailored to your needs" },
+            {
+              name: "Oil Vane Vacuum Pump",
+              description: "Oil Vane Vacuum Pump",
+            },
+            {
+              name: "Mechanical Vacuum Boosters",
+              description: "Mechanical Vacuum Boosters",
+            },
+            {
+              name: "MVR Blowers",
+              description: "MVR Blowers",
+            },
+            {
+              name: "Vacuum Systems And Packages",
+              description: "Vacuum Systems And Packages",
+            },
+            {
+              name: "Condenser Exhausters",
+              description: "Condenser Exhausters",
+            },
           ],
         },
+        // {
+        //   title: "Enterprise",
+        //   links: [
+        //     {
+        //       name: "Team Collaboration",
+        //       description: "Work together seamlessly",
+        //     },
+        //     {
+        //       name: "Advanced Security",
+        //       description: "Enterprise-grade security",
+        //     },
+        //     { name: "Custom Solutions", description: "Tailored to your needs" },
+        //   ],
+        // },
       ],
     },
     activities: {

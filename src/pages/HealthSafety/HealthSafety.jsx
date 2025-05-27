@@ -303,8 +303,15 @@ const HealthSafety = () => {
               <div className="stats-grid">
                 {safetyStats.map((stat, index) => (
                   <div key={index} className="stat-item">
-                    <div className="stat-value">{stat.value}</div>
-                    <div className="stat-label">{stat.label}</div>
+                    <div
+                      className="stat-value"
+                      style={{ color: "white", fontSize: "2rem" }}
+                    >
+                      {stat.value}
+                    </div>
+                    <div className="stat-label" style={{ color: "white" }}>
+                      {stat.label}
+                    </div>
                   </div>
                 ))}
               </div>

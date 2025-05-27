@@ -207,7 +207,12 @@ const PlantsPage = () => {
                   <span>{milestone.plants}</span>
                 </div>
                 <div className="timeline-content">
-                  <div className="timeline-year">{milestone.year}</div>
+                  <div
+                    className="timeline-year"
+                    style={{ color: "white", fontSize: "1.5rem" }}
+                  >
+                    {milestone.year}
+                  </div>
                   <p>{milestone.description}</p>
                 </div>
               </div>
