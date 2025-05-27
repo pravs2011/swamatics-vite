@@ -1,17 +1,23 @@
-import React, { useState } from "react";
-import logo from "../../assets/images/logo.png";
-import visionImage from "../../assets/images/swam-vision-1.png";
+import React, { useState, useEffect } from "react";
+import introVideo from "/images/intro-video.mp4";
 import MainTemplate from "../../components/Templates/MainTemplates";
-import introVideo from "../../assets/swamatics-intro.mp4";
-import hybridHelicalBlower from "../../assets/images/SuperHelicalHybridBlower.png";
-import turboBlowers from "../../assets/images/TurboBlowers-integrallyGearedType.png";
-import vacuumPumps from "../../assets/images/VacuumPumpsWithSecondarySuction.png";
+import Select from "react-select";
+
 import "./HomePage.css";
 
 const HomePage = () => {
   const [modalImage, setModalImage] = useState(null);
   const [modalTitle, setModalTitle] = useState("");
   const [activeStep, setActiveStep] = useState(1);
+  const [manufacturingSteps, setManufacturingSteps] = useState([]);
+  const [ourVision, setOurVision] = useState([]);
+  const [aboutSection, setAboutSection] = useState([]);
+  const [productLaunchedSection, setProductLaunchedSection] = useState();
+  const [projectsAndCompanyGrowthSection, setProjectsAndCompanyGrowthSection] =
+    useState();
+  const [performanceMetricsSection, setPerformanceMetricsSection] = useState();
+  const [ourClientsSection, setOurClientsSection] = useState();
+  const [contactUsSection, setContactUsSection] = useState();
 
   const openModal = (imageSrc, title) => {
     setModalImage(imageSrc);
@@ -23,53 +29,24 @@ const HomePage = () => {
     setModalTitle("");
   };
 
-  const manufacturingSteps = [
-    {
-      id: 1,
-      title: "Request Quotation",
-      description:
-        "Share your requirements with our technical team. We analyze your specific needs and provide detailed specifications and competitive pricing for your industrial blower solutions.",
-      image: hybridHelicalBlower,
-      details:
-        "Our expert engineers review your application requirements, operating conditions, and performance specifications to recommend the most suitable blower technology.",
-    },
-    {
-      id: 2,
-      title: "Planning Stage",
-      description:
-        "Our engineering team develops comprehensive project plans, technical drawings, and manufacturing schedules tailored to your specific requirements and delivery timelines.",
-      image: turboBlowers,
-      details:
-        "Detailed project planning ensures optimal resource allocation, quality control measures, and timely delivery of your customized industrial equipment.",
-    },
-    {
-      id: 3,
-      title: "Product Development",
-      description:
-        "Advanced design and prototyping phase where we create and test your custom blower solution using cutting-edge CAD software and simulation tools.",
-      image: vacuumPumps,
-      details:
-        "Our R&D team utilizes state-of-the-art technology to develop innovative solutions that meet industry standards and exceed performance expectations.",
-    },
-    {
-      id: 4,
-      title: "Production / Evaluation",
-      description:
-        "Precision manufacturing in our state-of-the-art facilities with continuous quality monitoring and performance evaluation at every stage of production.",
-      image: hybridHelicalBlower,
-      details:
-        "Advanced manufacturing processes ensure consistent quality, reliability, and adherence to international standards throughout the production cycle.",
-    },
-    {
-      id: 5,
-      title: "Inspection & Delivery",
-      description:
-        "Comprehensive quality inspection, testing, and certification before packaging and delivery to ensure your equipment meets all specifications and performance standards.",
-      image: turboBlowers,
-      details:
-        "Final inspection includes performance testing, quality certification, and professional packaging for safe delivery to your facility with installation support.",
-    },
-  ];
+  useEffect(() => {
+    fetch("/data/home.json")
+      .then((res) => res.json())
+      .then((data) => {
+        // console.log(data);
+        setManufacturingSteps(data.manufacturingSteps);
+        setOurVision(data.ourVision);
+        setAboutSection(data.aboutSection);
+        setProductLaunchedSection(data.productLaunchedSection);
+        setProjectsAndCompanyGrowthSection(
+          data.projectsAndCompanyGrowthSection
+        );
+        setPerformanceMetricsSection(data.performanceMetricsSection);
+        setOurClientsSection(data.ourClientsSection);
+        setContactUsSection(data.contactUsSection);
+      });
+  }, []);
+
   return (
     <MainTemplate>
       {/* Hero Section with Full Width Video */}
@@ -84,22 +61,12 @@ const HomePage = () => {
       <section className="vision-section">
         <div className="vision-container">
           <div className="vision-image">
-            <img src={visionImage} alt="Swam Vision" />
+            <img src={ourVision[0]?.image} alt="Swam Vision" />
           </div>
           <div className="vision-content">
-            <h2>Our Vision</h2>
-            <p>
-              Is to provide globally the best-manufactured products. Its focus
-              is on meeting our customers' requirements while being competitive.
-              Swam sees itself as being recognised as a world leader, providing
-              high-quality robust products.
-            </p>
-            <p>
-              Swam has achieved this by separating local and international
-              manufacturing facilities. Currently we have 4 factory locations, 2
-              of which are dedicated for international production. Our 5th (3rd
-              International) factory is currently under construction.
-            </p>
+            <h2>{ourVision[0]?.title}</h2>
+            <p>{ourVision[0]?.description1}</p>
+            <p>{ourVision[0]?.description2}</p>
             <div className="vision-cta">
               <button className="vision-btn">
                 <span>Learn More About Us</span>
@@ -135,11 +102,8 @@ const HomePage = () => {
       <section className="about-section">
         <div className="about-container">
           <div className="about-header">
-            <h2>About Swamatics</h2>
-            <p className="about-subtitle">
-              Pioneering the future of technology with innovative solutions and
-              unwavering commitment to excellence
-            </p>
+            <h2>{aboutSection?.title}</h2>
+            <p className="about-subtitle">{aboutSection?.description}</p>
           </div>
 
           <div className="about-content-grid">
@@ -160,13 +124,9 @@ const HomePage = () => {
                   />
                 </svg>
               </div>
-              <h3>Our Story</h3>
-              <p>
-                Born from a passion for innovation and excellence, Swamatics has
-                evolved into a leading technology partner. We combine
-                cutting-edge expertise with deep industry knowledge to deliver
-                transformative digital solutions that drive business success and
-                create lasting value for our clients.
+              <h3>{aboutSection?.ourStory?.title}</h3>
+              <p style={{ textAlign: "justify" }}>
+                {aboutSection?.ourStory?.description}
               </p>
             </div>
 
@@ -195,18 +155,15 @@ const HomePage = () => {
                   />
                 </svg>
               </div>
-              <h3>Our Mission</h3>
-              <p>
-                To empower businesses through innovative technology solutions
-                that streamline operations, enhance user experiences, and
-                accelerate growth. We believe in building long-term partnerships
-                and delivering results that exceed expectations.
+              <h3>{aboutSection?.ourMission?.title}</h3>
+              <p style={{ textAlign: "justify" }}>
+                {aboutSection?.ourMission?.description}
               </p>
             </div>
           </div>
 
           <div className="about-values">
-            <h3>Our Core Values</h3>
+            <h3>{aboutSection?.ourCoreValues?.title}</h3>
             <div className="values-grid">
               <div className="value-item">
                 <div className="value-icon">
@@ -231,11 +188,8 @@ const HomePage = () => {
                     />
                   </svg>
                 </div>
-                <h4>Quality First</h4>
-                <p>
-                  We never compromise on quality, ensuring every solution meets
-                  the highest standards.
-                </p>
+                <h4>{aboutSection?.ourCoreValues?.qualityTitle}</h4>
+                <p>{aboutSection?.ourCoreValues?.qualityDescription}</p>
               </div>
               <div className="value-item">
                 <div className="value-icon">
@@ -255,11 +209,8 @@ const HomePage = () => {
                     />
                   </svg>
                 </div>
-                <h4>Innovation</h4>
-                <p>
-                  Constantly pushing boundaries to deliver cutting-edge
-                  technological solutions.
-                </p>
+                <h4>{aboutSection?.ourCoreValues?.innovationTitle}</h4>
+                <p>{aboutSection?.ourCoreValues?.innovationDescription}</p>
               </div>
               <div className="value-item">
                 <div className="value-icon">
@@ -300,11 +251,8 @@ const HomePage = () => {
                     />
                   </svg>
                 </div>
-                <h4>Collaboration</h4>
-                <p>
-                  Working closely with clients as true partners to achieve
-                  shared success.
-                </p>
+                <h4>{aboutSection?.ourCoreValues?.collaborationTitle}</h4>
+                <p>{aboutSection?.ourCoreValues?.collaborationDescription}</p>
               </div>
               <div className="value-item">
                 <div className="value-icon">
@@ -329,11 +277,8 @@ const HomePage = () => {
                     />
                   </svg>
                 </div>
-                <h4>Reliability</h4>
-                <p>
-                  Delivering consistent, dependable results that you can count
-                  on every time.
-                </p>
+                <h4>{aboutSection?.ourCoreValues?.reliabilityTitle}</h4>
+                <p>{aboutSection?.ourCoreValues?.reliabilityDescription}</p>
               </div>
             </div>
           </div>
@@ -343,10 +288,8 @@ const HomePage = () => {
       {/* Products Section */}
       <section className="products-section">
         <div className="products-header">
-          <h2>New Technology Product Launched</h2>
-          <p>
-            Advanced & Next Generation Energy Efficient Helical Blower Package
-          </p>
+          <h2>{productLaunchedSection?.title}</h2>
+          <p>{productLaunchedSection?.description}</p>
         </div>
         <div className="products-grid">
           <div className="product-card large-card">
@@ -354,20 +297,18 @@ const HomePage = () => {
               className="product-image clickable-image"
               onClick={() =>
                 openModal(
-                  hybridHelicalBlower,
+                  productLaunchedSection?.products[0]?.image,
                   "Super Helical Hybrid Blower Package, 100% Energy Efficient"
                 )
               }
             >
               <img
-                src={hybridHelicalBlower}
+                src={productLaunchedSection?.products[0]?.image}
                 alt="Super Helical Hybrid Blower"
               />
             </div>
             <div className="product-content">
-              <h3>
-                Super Helical Hybrid Blower Package, 100% Energy Efficient
-              </h3>
+              <h3>{productLaunchedSection?.products[0]?.title}</h3>
               <p
                 style={{
                   textAlign: "justify",
@@ -375,20 +316,9 @@ const HomePage = () => {
                   color: "#808080",
                 }}
               >
-                Positive Displacement Super Helical lobe Rotary Blower is an
-                integrated package that comprises of high efficiency Helical
-                lobe blowers (which is direct coupled with motor), high
-                efficiency Motors (IE3/IE4) of reputed supplier ABB /SIEMENS
-                /CGL –origin India) & high efficiency VFD (ABB /SIEMENS
-                /Schneider –origin India ) , HMI (Allen bredly –origin India),
-                PLC controls (ABB/Siemens / Allen bredly –origin India), all
-                safety instruments (transmitters & gauges & valves) for reliable
-                and efficient operation (origin India), & fully fail proof
-                design. This package gets accompanied in sound reduction cabinet
-                that ensure low noise level & comply to industrial sound
-                pollution norms for less than 85 Db(A) Noise level @ 1 meter
-                distance.
+                {productLaunchedSection?.products[0]?.description}
               </p>
+              <br />
               <p
                 style={{
                   textAlign: "justify",
@@ -396,10 +326,7 @@ const HomePage = () => {
                   color: "#808080",
                 }}
               >
-                It has cutting edge technology, next generation, innovative
-                design, unmatched performance, cent percent make in India
-                product with low operation Electricity cost & ownership cost
-                over 15 years.
+                {productLaunchedSection?.products[0]?.description2}
               </p>
               <button className="learn-more-btn">
                 <span>Learn More</span>
@@ -434,15 +361,18 @@ const HomePage = () => {
               className="product-image clickable-image"
               onClick={() =>
                 openModal(
-                  turboBlowers,
+                  productLaunchedSection?.products[1]?.image,
                   "Vacuum Pumps With Secondary Suction, Air Injection"
                 )
               }
             >
-              <img src={turboBlowers} alt="Vacuum Pumps" />
+              <img
+                src={productLaunchedSection?.products[1]?.image}
+                alt="Turbo Blowers"
+              />
             </div>
             <div className="product-content">
-              <h3>Turbo Blowers - Integrally Geared Type</h3>
+              <h3>{productLaunchedSection?.products[1]?.title}</h3>
               <p
                 style={{
                   textAlign: "justify",
@@ -450,9 +380,7 @@ const HomePage = () => {
                   color: "#808080",
                 }}
               >
-                High efficiency Swam Turbo Blowers are most advanced single
-                stage centrifugal machine based on high speed focused
-                specialized technology oil less operation.
+                {productLaunchedSection?.products[1]?.description}
               </p>
               <button className="learn-more-btn">
                 <span>Learn More</span>
@@ -486,13 +414,19 @@ const HomePage = () => {
             <div
               className="product-image clickable-image"
               onClick={() =>
-                openModal(vacuumPumps, "Turbo Blowers, Integrally Geared Type")
+                openModal(
+                  productLaunchedSection?.products[2]?.image,
+                  "Turbo Blowers, Integrally Geared Type"
+                )
               }
             >
-              <img src={vacuumPumps} alt="Turbo Blowers" />
+              <img
+                src={productLaunchedSection?.products[2]?.image}
+                alt="Vacuum Pumps"
+              />
             </div>
             <div className="product-content">
-              <h3>Vacuum Pumps With Secondary Suction/Air Injection</h3>
+              <h3>{productLaunchedSection?.products[2]?.title}</h3>
               <p
                 style={{
                   textAlign: "justify",
@@ -500,9 +434,7 @@ const HomePage = () => {
                   color: "#808080",
                 }}
               >
-                For negative suction, the pumps are ideally suited for processes
-                requiring medium vacuums such as degassing, exhausting and
-                pneumatic conveying.
+                {productLaunchedSection?.products[2]?.description}
               </p>
               <button className="learn-more-btn">
                 <span>Learn More</span>
@@ -553,22 +485,18 @@ const HomePage = () => {
               <div className="main-content">
                 <div className="content-image">
                   <img
-                    src={manufacturingSteps[activeStep - 1].image}
-                    alt={manufacturingSteps[activeStep - 1].title}
+                    src={manufacturingSteps[activeStep - 1]?.image}
+                    alt={manufacturingSteps[activeStep - 1]?.title}
                   />
                   <div className="image-overlay">
-                    <h3>{manufacturingSteps[activeStep - 1].title}</h3>
-                    <p>{manufacturingSteps[activeStep - 1].description}</p>
+                    <h3>{manufacturingSteps[activeStep - 1]?.title}</h3>
+                    <p>{manufacturingSteps[activeStep - 1]?.description}</p>
                     <span className="details-text">
-                      {manufacturingSteps[activeStep - 1].details}
+                      {manufacturingSteps[activeStep - 1]?.details}
                     </span>
                   </div>
                 </div>
               </div>
-
-              {/* <div className="request-quotation-vertical">
-                <span>Request Quotation</span>
-              </div> */}
             </div>
 
             {/* Steps Grid */}
@@ -601,12 +529,9 @@ const HomePage = () => {
       {/* Projects & Company Growth */}
       <section className="projects-and-company-growth-section">
         <div className="projects-and-company-growth-container">
-          <div className="growth-header">
-            <h2>Projects & Company Growth</h2>
-            <p>
-              Driving innovation and excellence across industries with
-              consistent growth and successful project delivery
-            </p>
+          <div className="projects-and-company-growth-header">
+            <h2>{projectsAndCompanyGrowthSection?.title}</h2>
+            <p>{projectsAndCompanyGrowthSection?.description}</p>
           </div>
 
           {/* Growth Statistics */}
@@ -621,7 +546,14 @@ const HomePage = () => {
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
-                    d="M13 2L3 14H12L11 22L21 10H12L13 2Z"
+                    d="M3 3V21H21"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                  <path
+                    d="M7 12L12 7L16 11L21 6"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -629,10 +561,20 @@ const HomePage = () => {
                   />
                 </svg>
               </div>
-              <div className="stat-number">500+</div>
-              <div className="stat-label">Projects Completed</div>
+              <div className="stat-number" style={{ color: "#fff" }}>
+                {
+                  projectsAndCompanyGrowthSection?.projectsCompleted
+                    ?.totalNumbers
+                }
+              </div>
+              <div className="stat-label">
+                {projectsAndCompanyGrowthSection?.projectsCompleted?.title}
+              </div>
               <div className="stat-description">
-                Successfully delivered industrial solutions worldwide
+                {
+                  projectsAndCompanyGrowthSection?.projectsCompleted
+                    ?.description
+                }
               </div>
             </div>
 
@@ -675,10 +617,14 @@ const HomePage = () => {
                   />
                 </svg>
               </div>
-              <div className="stat-number">200+</div>
-              <div className="stat-label">Happy Clients</div>
+              <div className="stat-number" style={{ color: "#fff" }}>
+                {projectsAndCompanyGrowthSection?.globalClients?.totalNumbers}
+              </div>
+              <div className="stat-label">
+                {projectsAndCompanyGrowthSection?.globalClients?.title}
+              </div>
               <div className="stat-description">
-                Trusted by leading companies globally
+                {projectsAndCompanyGrowthSection?.globalClients?.description}
               </div>
             </div>
 
@@ -691,26 +637,28 @@ const HomePage = () => {
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
                 >
-                  <circle
-                    cx="12"
-                    cy="12"
-                    r="10"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                  />
                   <path
-                    d="M12 6V12L16 14"
+                    d="M12 2L13.09 8.26L22 9L13.09 9.74L12 16L10.91 9.74L2 9L10.91 8.26L12 2Z"
                     stroke="currentColor"
                     strokeWidth="2"
-                    strokeLinecap="round"
                     strokeLinejoin="round"
                   />
                 </svg>
               </div>
-              <div className="stat-number">15+</div>
-              <div className="stat-label">Years Experience</div>
+              <div className="stat-number" style={{ color: "#fff" }}>
+                {
+                  projectsAndCompanyGrowthSection?.yearsOfExperience
+                    ?.totalNumbers
+                }
+              </div>
+              <div className="stat-label">
+                {projectsAndCompanyGrowthSection?.yearsOfExperience?.title}
+              </div>
               <div className="stat-description">
-                Decades of industrial expertise and innovation
+                {
+                  projectsAndCompanyGrowthSection?.yearsOfExperience
+                    ?.description
+                }
               </div>
             </div>
 
@@ -741,134 +689,23 @@ const HomePage = () => {
                   />
                 </svg>
               </div>
-              <div className="stat-number">25+</div>
-              <div className="stat-label">Countries Served</div>
+              <div className="stat-number" style={{ color: "#fff" }}>
+                {
+                  projectsAndCompanyGrowthSection?.manufacturingFacilities
+                    ?.totalNumbers
+                }
+              </div>
+              <div className="stat-label">
+                {
+                  projectsAndCompanyGrowthSection?.manufacturingFacilities
+                    ?.title
+                }
+              </div>
               <div className="stat-description">
-                Global presence with international reach
-              </div>
-            </div>
-          </div>
-
-          {/* Growth Timeline */}
-          <div className="growth-timeline">
-            <h3>Our Growth Journey</h3>
-            <div className="timeline-container">
-              <div className="timeline-item">
-                <div className="timeline-year">2008</div>
-                <div className="timeline-content">
-                  <h4>Company Founded</h4>
-                  <p>
-                    Started with a vision to revolutionize industrial blower
-                    technology
-                  </p>
-                </div>
-              </div>
-
-              <div className="timeline-item">
-                <div className="timeline-year">2012</div>
-                <div className="timeline-content">
-                  <h4>First International Project</h4>
-                  <p>
-                    Expanded globally with our first major international
-                    installation
-                  </p>
-                </div>
-              </div>
-
-              <div className="timeline-item">
-                <div className="timeline-year">2016</div>
-                <div className="timeline-content">
-                  <h4>Innovation Hub Established</h4>
-                  <p>
-                    Opened state-of-the-art R&D facility for advanced product
-                    development
-                  </p>
-                </div>
-              </div>
-
-              <div className="timeline-item">
-                <div className="timeline-year">2020</div>
-                <div className="timeline-content">
-                  <h4>Industry Leadership</h4>
-                  <p>
-                    Became the leading provider of energy-efficient blower
-                    solutions
-                  </p>
-                </div>
-              </div>
-
-              <div className="timeline-item">
-                <div className="timeline-year">2024</div>
-                <div className="timeline-content">
-                  <h4>Future Vision</h4>
-                  <p>Launching next-generation smart industrial solutions</p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Featured Projects */}
-          <div className="featured-projects">
-            <h3>Featured Projects</h3>
-            <div className="projects-grid">
-              <div className="project-card">
-                <div className="project-image">
-                  <img src={hybridHelicalBlower} alt="Water Treatment Plant" />
-                  <div className="project-overlay">
-                    <div className="project-type">Water Treatment</div>
-                  </div>
-                </div>
-                <div className="project-content">
-                  <h4>Municipal Water Treatment Plant</h4>
-                  <p>
-                    Advanced blower systems for major metropolitan water
-                    treatment facility serving 2 million residents
-                  </p>
-                  <div className="project-specs">
-                    <span>Capacity: 500 MGD</span>
-                    <span>Location: Mumbai, India</span>
-                  </div>
-                </div>
-              </div>
-
-              <div className="project-card">
-                <div className="project-image">
-                  <img src={turboBlowers} alt="Steel Manufacturing" />
-                  <div className="project-overlay">
-                    <div className="project-type">Steel Industry</div>
-                  </div>
-                </div>
-                <div className="project-content">
-                  <h4>Steel Manufacturing Complex</h4>
-                  <p>
-                    High-efficiency turbo blowers for blast furnace operations
-                    in largest steel production facility
-                  </p>
-                  <div className="project-specs">
-                    <span>Output: 10 MTPA</span>
-                    <span>Location: Odisha, India</span>
-                  </div>
-                </div>
-              </div>
-
-              <div className="project-card">
-                <div className="project-image">
-                  <img src={vacuumPumps} alt="Pharmaceutical Plant" />
-                  <div className="project-overlay">
-                    <div className="project-type">Pharmaceutical</div>
-                  </div>
-                </div>
-                <div className="project-content">
-                  <h4>Pharmaceutical Manufacturing</h4>
-                  <p>
-                    Precision vacuum systems for critical pharmaceutical
-                    production and packaging processes
-                  </p>
-                  <div className="project-specs">
-                    <span>Grade: ISO 14644</span>
-                    <span>Location: Hyderabad, India</span>
-                  </div>
-                </div>
+                {
+                  projectsAndCompanyGrowthSection?.manufacturingFacilities
+                    ?.description
+                }
               </div>
             </div>
           </div>
@@ -876,46 +713,79 @@ const HomePage = () => {
           {/* Growth Metrics */}
           <div className="growth-metrics">
             <div className="metrics-header">
-              <h3>Continuous Growth</h3>
-              <p>
-                Our commitment to excellence drives consistent year-over-year
-                growth
-              </p>
+              <h3>{performanceMetricsSection?.title}</h3>
+              <p>{performanceMetricsSection?.description}</p>
             </div>
             <div className="metrics-grid">
               <div className="metric-card">
-                <div className="metric-title">Revenue Growth</div>
-                <div className="metric-percentage">45%</div>
-                <div className="metric-subtitle">Year over Year</div>
+                <div className="metric-title">
+                  {performanceMetricsSection?.clientSatisfaction?.title}
+                </div>
+                <div className="metric-percentage">
+                  {performanceMetricsSection?.clientSatisfaction?.percentage}
+                </div>
+                <div className="metric-subtitle">
+                  {performanceMetricsSection?.clientSatisfaction?.description}
+                </div>
                 <div className="progress-bar">
-                  <div className="progress-fill" style={{ width: "45%" }}></div>
+                  <div
+                    className="progress-fill"
+                    style={{ "--progress-width": "98%" }}
+                  ></div>
                 </div>
               </div>
 
               <div className="metric-card">
-                <div className="metric-title">Market Expansion</div>
-                <div className="metric-percentage">60%</div>
-                <div className="metric-subtitle">New Markets</div>
+                <div className="metric-title">
+                  {performanceMetricsSection?.energyEfficiency?.title}
+                </div>
+                <div className="metric-percentage">
+                  {performanceMetricsSection?.energyEfficiency?.percentage}
+                </div>
+                <div className="metric-subtitle">
+                  {performanceMetricsSection?.energyEfficiency?.description}
+                </div>
                 <div className="progress-bar">
-                  <div className="progress-fill" style={{ width: "60%" }}></div>
+                  <div
+                    className="progress-fill"
+                    style={{ "--progress-width": "45%" }}
+                  ></div>
                 </div>
               </div>
 
               <div className="metric-card">
-                <div className="metric-title">Client Retention</div>
-                <div className="metric-percentage">95%</div>
-                <div className="metric-subtitle">Customer Satisfaction</div>
+                <div className="metric-title">
+                  {performanceMetricsSection?.projectSuccess?.title}
+                </div>
+                <div className="metric-percentage">
+                  {performanceMetricsSection?.projectSuccess?.percentage}
+                </div>
+                <div className="metric-subtitle">
+                  {performanceMetricsSection?.projectSuccess?.description}
+                </div>
                 <div className="progress-bar">
-                  <div className="progress-fill" style={{ width: "95%" }}></div>
+                  <div
+                    className="progress-fill"
+                    style={{ "--progress-width": "99%" }}
+                  ></div>
                 </div>
               </div>
 
               <div className="metric-card">
-                <div className="metric-title">Innovation Index</div>
-                <div className="metric-percentage">80%</div>
-                <div className="metric-subtitle">R&D Investment</div>
+                <div className="metric-title">
+                  {performanceMetricsSection?.globalReach?.title}
+                </div>
+                <div className="metric-percentage">
+                  {performanceMetricsSection?.globalReach?.percentage}
+                </div>
+                <div className="metric-subtitle">
+                  {performanceMetricsSection?.globalReach?.description}
+                </div>
                 <div className="progress-bar">
-                  <div className="progress-fill" style={{ width: "80%" }}></div>
+                  <div
+                    className="progress-fill"
+                    style={{ "--progress-width": "85%" }}
+                  ></div>
                 </div>
               </div>
             </div>
@@ -927,11 +797,8 @@ const HomePage = () => {
       <section className="our-client-reviews-section">
         <div className="our-client-reviews-container">
           <div className="reviews-header">
-            <h2>Our Client Reviews</h2>
-            <p>
-              Don't just take our word for it - hear what our satisfied clients
-              have to say about their experience working with us
-            </p>
+            <h2>{ourClientsSection?.title}</h2>
+            <p>{ourClientsSection?.description}</p>
           </div>
 
           {/* Overall Rating */}
@@ -1000,152 +867,44 @@ const HomePage = () => {
 
           {/* Client Testimonials */}
           <div className="testimonials-grid">
-            <div className="testimonial-card">
-              <div className="testimonial-header">
-                <div className="client-avatar">
-                  <img
-                    src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=150&h=150&fit=crop&crop=face"
-                    alt="David Johnson"
-                  />
+            {ourClientsSection?.clients?.map((client) => (
+              <div className="testimonial-card" key={client.id}>
+                <div className="testimonial-header">
+                  <div className="client-avatar">
+                    <img src={client.image} alt={client.name} />
+                  </div>
+                  <div className="client-info">
+                    <h4>{client.name}</h4>
+                    <p>{client.designation}</p>
+                    <span>{client.company}</span>
+                  </div>
+                  <div className="review-stars">
+                    {[...Array(5)].map((_, i) => (
+                      <svg
+                        key={i}
+                        width="16"
+                        height="16"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M12 2L15.09 8.26L22 9L17 14L18.18 21L12 17.77L5.82 21L7 14L2 9L8.91 8.26L12 2Z"
+                          fill="#FFD700"
+                        />
+                      </svg>
+                    ))}
+                  </div>
                 </div>
-                <div className="client-info">
-                  <h4>David Johnson</h4>
-                  <p>Plant Manager</p>
-                  <span>Reliance Industries</span>
+                <div className="testimonial-content">
+                  <p>"{client.testimonial}"</p>
                 </div>
-                <div className="review-stars">
-                  {[...Array(4)].map((_, i) => (
-                    <svg
-                      key={i}
-                      width="16"
-                      height="16"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M12 2L15.09 8.26L22 9L17 14L18.18 21L12 17.77L5.82 21L7 14L2 9L8.91 8.26L12 2Z"
-                        fill="#FFD700"
-                      />
-                    </svg>
-                  ))}
-                  <svg
-                    width="16"
-                    height="16"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M12 2L15.09 8.26L22 9L17 14L18.18 21L12 17.77L5.82 21L7 14L2 9L8.91 8.26L12 2Z"
-                      fill="#E5E7EB"
-                    />
-                  </svg>
+                <div className="testimonial-footer">
+                  <span className="review-date">{client.reviewDate}</span>
+                  <span className="verified-badge">✓ Verified Purchase</span>
                 </div>
               </div>
-              <div className="testimonial-content">
-                <p>
-                  "Great experience working with Swamatics on our petrochemical
-                  facility upgrade. The turbo blowers have improved our
-                  efficiency significantly. Professional team with excellent
-                  technical support."
-                </p>
-              </div>
-              <div className="testimonial-footer">
-                <span className="review-date">1 month ago</span>
-                <span className="verified-badge">✓ Verified Purchase</span>
-              </div>
-            </div>
-
-            <div className="testimonial-card">
-              <div className="testimonial-header">
-                <div className="client-avatar">
-                  <img
-                    src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=150&h=150&fit=crop&crop=face"
-                    alt="Sarah Williams"
-                  />
-                </div>
-                <div className="client-info">
-                  <h4>Sarah Williams</h4>
-                  <p>Environmental Engineer</p>
-                  <span>Veolia Water Technologies</span>
-                </div>
-                <div className="review-stars">
-                  {[...Array(5)].map((_, i) => (
-                    <svg
-                      key={i}
-                      width="16"
-                      height="16"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M12 2L15.09 8.26L22 9L17 14L18.18 21L12 17.77L5.82 21L7 14L2 9L8.91 8.26L12 2Z"
-                        fill="#FFD700"
-                      />
-                    </svg>
-                  ))}
-                </div>
-              </div>
-              <div className="testimonial-content">
-                <p>
-                  "Swamatics provided the perfect solution for our wastewater
-                  treatment requirements. Their energy-efficient blowers have
-                  not only improved our process efficiency but also helped us
-                  meet our sustainability goals."
-                </p>
-              </div>
-              <div className="testimonial-footer">
-                <span className="review-date">2 weeks ago</span>
-                <span className="verified-badge">✓ Verified Purchase</span>
-              </div>
-            </div>
-
-            <div className="testimonial-card">
-              <div className="testimonial-header">
-                <div className="client-avatar">
-                  <img
-                    src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=150&h=150&fit=crop&crop=face"
-                    alt="Ahmed Hassan"
-                  />
-                </div>
-                <div className="client-info">
-                  <h4>Ahmed Hassan</h4>
-                  <p>Technical Director</p>
-                  <span>SABIC Industries</span>
-                </div>
-                <div className="review-stars">
-                  {[...Array(5)].map((_, i) => (
-                    <svg
-                      key={i}
-                      width="16"
-                      height="16"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M12 2L15.09 8.26L22 9L17 14L18.18 21L12 17.77L5.82 21L7 14L2 9L8.91 8.26L12 2Z"
-                        fill="#FFD700"
-                      />
-                    </svg>
-                  ))}
-                </div>
-              </div>
-              <div className="testimonial-content">
-                <p>
-                  "Exceptional quality and reliability. Swamatics has been our
-                  trusted partner for multiple projects across our chemical
-                  plants. Their innovative approach and after-sales support are
-                  truly remarkable."
-                </p>
-              </div>
-              <div className="testimonial-footer">
-                <span className="review-date">3 months ago</span>
-                <span className="verified-badge">✓ Verified Purchase</span>
-              </div>
-            </div>
+            ))}
           </div>
 
           {/* Trust Indicators */}
@@ -1577,21 +1336,15 @@ const HomePage = () => {
       <section className="contact-section">
         <div className="contact-container">
           <div className="contact-header">
-            <h2>Let's Start Something Amazing Together</h2>
-            <p className="contact-subtitle">
-              Ready to transform your ideas into reality? We'd love to hear from
-              you and discuss how we can help your business thrive.
-            </p>
+            <h2>{contactUsSection?.title}</h2>
+            <p className="contact-subtitle">{contactUsSection?.description}</p>
           </div>
 
           <div className="contact-content">
             <div className="contact-info-panel">
               <div className="contact-intro">
-                <h3>Get in Touch</h3>
-                <p>
-                  We're here to help you succeed. Reach out to us through any of
-                  the channels below, and we'll get back to you within 24 hours.
-                </p>
+                <h3>{contactUsSection?.getInTouch?.title}</h3>
+                <p>{contactUsSection?.getInTouch?.description}</p>
               </div>
 
               <div className="contact-methods">
@@ -1621,9 +1374,11 @@ const HomePage = () => {
                     </svg>
                   </div>
                   <div className="contact-details">
-                    <h4>Email Us</h4>
-                    <p>info@swamatics.com</p>
-                    <span>We'll respond within 24 hours</span>
+                    <h4>{contactUsSection?.getInTouch?.emailUs?.title}</h4>
+                    <p>{contactUsSection?.getInTouch?.emailUs?.email}</p>
+                    <span>
+                      {contactUsSection?.getInTouch?.emailUs?.message}
+                    </span>
                   </div>
                 </div>
 
@@ -1646,9 +1401,9 @@ const HomePage = () => {
                     </svg>
                   </div>
                   <div className="contact-details">
-                    <h4>Call Us</h4>
-                    <p>+1 (555) 123-4567</p>
-                    <span>Mon-Fri, 9AM-6PM EST</span>
+                    <h4>{contactUsSection?.getInTouch?.callUs?.title}</h4>
+                    <p>{contactUsSection?.getInTouch?.callUs?.phone}</p>
+                    <span>{contactUsSection?.getInTouch?.callUs?.message}</span>
                   </div>
                 </div>
 
@@ -1680,17 +1435,22 @@ const HomePage = () => {
                     </svg>
                   </div>
                   <div className="contact-details">
-                    <h4>Visit Us</h4>
-                    <p>123 Tech Street, Suite 100</p>
-                    <span>New York, NY 10001</span>
+                    <h4>{contactUsSection?.getInTouch?.visitUs?.title}</h4>
+                    <p>{contactUsSection?.getInTouch?.visitUs?.address}</p>
+                    <span>
+                      {contactUsSection?.getInTouch?.visitUs?.message}
+                    </span>
                   </div>
                 </div>
               </div>
 
               <div className="social-links">
-                <h4>Follow Us</h4>
+                <h4>{contactUsSection?.getInTouch?.socialMedia?.title}</h4>
                 <div className="social-icons">
-                  <a href="#" className="social-link">
+                  <a
+                    href={contactUsSection?.getInTouch?.socialMedia?.facebook}
+                    className="social-link"
+                  >
                     <svg
                       width="20"
                       height="20"
@@ -1707,7 +1467,10 @@ const HomePage = () => {
                       />
                     </svg>
                   </a>
-                  <a href="#" className="social-link">
+                  <a
+                    href={contactUsSection?.getInTouch?.socialMedia?.twitter}
+                    className="social-link"
+                  >
                     <svg
                       width="20"
                       height="20"
@@ -1724,7 +1487,10 @@ const HomePage = () => {
                       />
                     </svg>
                   </a>
-                  <a href="#" className="social-link">
+                  <a
+                    href={contactUsSection?.getInTouch?.socialMedia?.linkedin}
+                    className="social-link"
+                  >
                     <svg
                       width="20"
                       height="20"
@@ -1860,14 +1626,21 @@ const HomePage = () => {
 
                 <div className="form-group">
                   <label htmlFor="service">Service Interested In</label>
-                  <select id="service" name="service" required>
-                    <option value="">Select a service</option>
-                    <option value="web-development">Web Development</option>
-                    <option value="mobile-apps">Mobile Applications</option>
-                    <option value="cloud-solutions">Cloud Solutions</option>
-                    <option value="consulting">Technology Consulting</option>
-                    <option value="other">Other</option>
-                  </select>
+                  <Select
+                    id="service"
+                    name="service"
+                    placeholder="Select a service"
+                    className="react-select__control"
+                    options={[
+                      { value: "web-development", label: "Web Development" },
+                      { value: "mobile-apps", label: "Mobile Applications" },
+                      { value: "cloud-solutions", label: "Cloud Solutions" },
+                      { value: "consulting", label: "Technology Consulting" },
+                      { value: "other", label: "Other" },
+                    ]}
+                    isSearchable={false}
+                    required
+                  />
                 </div>
 
                 <div className="form-group">

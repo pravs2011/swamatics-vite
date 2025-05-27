@@ -1,0 +1,683 @@
+/* Welcome From CEO Styles */
+
+/* Hero Section */
+.ceo-hero-section {
+  position: relative;
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 50%, #60a5fa 100%);
+  overflow: hidden;
+}
+
+.hero-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(30, 58, 138, 0.8);
+  z-index: 2;
+}
+
+.ceo-hero-container {
+  position: relative;
+  z-index: 3;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  text-align: center;
+}
+
+.hero-content {
+  color: white;
+}
+
+.hero-badge {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  padding: 0.5rem 1.5rem;
+  border-radius: 50px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  margin-bottom: 1.5rem;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.ceo-hero-container h1 {
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
+}
+
+.hero-subtitle {
+  font-size: 1.25rem;
+  line-height: 1.6;
+  opacity: 0.9;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* CEO Introduction Section */
+.ceo-introduction-section {
+  padding: 6rem 0;
+  background: #f8fafc;
+}
+
+.ceo-introduction-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.introduction-grid {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 4rem;
+  align-items: start;
+}
+
+/* CEO Image Section */
+.ceo-image-section {
+  position: sticky;
+  top: 2rem;
+}
+
+.ceo-image-container {
+  position: relative;
+  margin-bottom: 2rem;
+}
+
+.ceo-image {
+  width: 100%;
+  max-width: 400px;
+  height: 500px;
+  object-fit: cover;
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+.image-decoration {
+  position: absolute;
+  top: -20px;
+  right: -20px;
+  width: 100px;
+  height: 100px;
+  background: linear-gradient(135deg, #3b82f6, #60a5fa);
+  border-radius: 20px;
+  z-index: -1;
+  opacity: 0.8;
+}
+
+.ceo-credentials {
+  background: white;
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.ceo-credentials h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1e293b;
+  margin-bottom: 0.5rem;
+}
+
+.ceo-title {
+  color: #3b82f6;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+}
+
+.credentials-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.credential-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.875rem;
+  color: #64748b;
+}
+
+.credential-icon {
+  font-size: 1.25rem;
+}
+
+/* CEO Message Section */
+.ceo-message-section {
+  background: white;
+  padding: 3rem;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.message-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.message-header h2 {
+  font-size: 2.25rem;
+  font-weight: 700;
+  color: #1e293b;
+  margin: 0;
+}
+
+.quote-indicator {
+  color: #3b82f6;
+  opacity: 0.6;
+}
+
+.ceo-message-content {
+  line-height: 1.8;
+}
+
+.main-message {
+  margin-bottom: 3rem;
+}
+
+.opening-quote {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #1e293b;
+  font-style: italic;
+  margin-bottom: 2rem;
+  padding-left: 2rem;
+  border-left: 4px solid #3b82f6;
+}
+
+.main-message p {
+  color: #64748b;
+  margin-bottom: 1.5rem;
+  font-size: 1rem;
+}
+
+/* Rotating Quotes */
+.rotating-quotes {
+  background: #f1f5f9;
+  padding: 2rem;
+  border-radius: 16px;
+  margin-bottom: 3rem;
+}
+
+.quote-container {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.quote-text {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #1e293b;
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+.quote-context {
+  color: #3b82f6;
+  font-weight: 500;
+  font-size: 0.875rem;
+}
+
+.quote-navigation {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.quote-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: none;
+  background: #cbd5e1;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.quote-dot.active {
+  background: #3b82f6;
+  transform: scale(1.2);
+}
+
+.quote-dot:hover {
+  background: #60a5fa;
+}
+
+/* Message Signature */
+.message-signature {
+  border-top: 1px solid #e2e8f0;
+  padding-top: 2rem;
+}
+
+.signature-line {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.signature-name {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: #1e293b;
+}
+
+.signature-title {
+  color: #64748b;
+  font-size: 0.875rem;
+}
+
+/* Vision & Leadership Section */
+.vision-leadership-section {
+  padding: 6rem 0;
+  background: white;
+}
+
+.vision-leadership-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.section-header h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #1e293b;
+  margin-bottom: 1rem;
+}
+
+.section-header p {
+  font-size: 1.125rem;
+  color: #64748b;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.leadership-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+}
+
+.vision-card {
+  background: white;
+  padding: 2.5rem;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.vision-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.card-icon {
+  color: #3b82f6;
+  margin-bottom: 1.5rem;
+  display: flex;
+  justify-content: center;
+}
+
+.vision-card h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1e293b;
+  margin-bottom: 1rem;
+}
+
+.vision-card p {
+  color: #64748b;
+  line-height: 1.6;
+}
+
+/* Achievements Section */
+.achievements-section {
+  padding: 6rem 0;
+  background: #f8fafc;
+}
+
+.achievements-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.achievements-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.achievement-card {
+  background: white;
+  padding: 2.5rem;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.achievement-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.achievement-icon {
+  color: #3b82f6;
+  margin-bottom: 1.5rem;
+  display: flex;
+  justify-content: center;
+}
+
+.achievement-card h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #1e293b;
+  margin-bottom: 1rem;
+}
+
+.achievement-card p {
+  color: #64748b;
+  line-height: 1.6;
+}
+
+/* Journey Timeline Section */
+.journey-timeline-section {
+  padding: 6rem 0;
+  background: white;
+}
+
+.journey-timeline-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.timeline-wrapper {
+  position: relative;
+  margin-top: 4rem;
+}
+
+.timeline-line {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: #e2e8f0;
+  transform: translateX(-50%);
+}
+
+.milestones-container {
+  position: relative;
+}
+
+.milestone-item {
+  position: relative;
+  margin-bottom: 4rem;
+  display: flex;
+  align-items: center;
+}
+
+.milestone-item.left {
+  justify-content: flex-end;
+}
+
+.milestone-item.right {
+  justify-content: flex-start;
+}
+
+.milestone-content {
+  background: white;
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  max-width: 400px;
+  position: relative;
+}
+
+.milestone-item.left .milestone-content {
+  margin-right: 3rem;
+  text-align: right;
+}
+
+.milestone-item.right .milestone-content {
+  margin-left: 3rem;
+  text-align: left;
+}
+
+.milestone-year {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #3b82f6;
+  margin-bottom: 0.5rem;
+}
+
+.milestone-content h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #1e293b;
+  margin-bottom: 0.75rem;
+}
+
+.milestone-content p {
+  color: #64748b;
+  line-height: 1.6;
+}
+
+.milestone-dot {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 16px;
+  height: 16px;
+  background: #3b82f6;
+  border: 4px solid white;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0 0 4px #e2e8f0;
+  z-index: 2;
+}
+
+/* CTA Section */
+.ceo-cta-section {
+  padding: 6rem 0;
+  background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 50%, #60a5fa 100%);
+  color: white;
+}
+
+.ceo-cta-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  text-align: center;
+}
+
+.cta-content h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+}
+
+.cta-content p {
+  font-size: 1.125rem;
+  line-height: 1.6;
+  margin-bottom: 3rem;
+  opacity: 0.9;
+}
+
+.cta-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.cta-primary,
+.cta-secondary {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem 2rem;
+  border-radius: 12px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.cta-primary {
+  background: white;
+  color: #1e3a8a;
+}
+
+.cta-primary:hover {
+  background: #f1f5f9;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.cta-secondary {
+  background: transparent;
+  color: white;
+  border: 2px solid white;
+}
+
+.cta-secondary:hover {
+  background: white;
+  color: #1e3a8a;
+  transform: translateY(-2px);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .introduction-grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  
+  .ceo-image-section {
+    position: static;
+    order: -1;
+  }
+  
+  .leadership-grid {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .ceo-hero-container h1 {
+    font-size: 2.5rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 1rem;
+  }
+  
+  .ceo-introduction-section,
+  .vision-leadership-section,
+  .achievements-section,
+  .journey-timeline-section {
+    padding: 4rem 0;
+  }
+  
+  .ceo-message-section {
+    padding: 2rem;
+  }
+  
+  .section-header h2 {
+    font-size: 2rem;
+  }
+  
+  .timeline-line {
+    left: 2rem;
+  }
+  
+  .milestone-item {
+    justify-content: flex-start !important;
+  }
+  
+  .milestone-content {
+    margin-left: 4rem !important;
+    margin-right: 0 !important;
+    text-align: left !important;
+  }
+  
+  .milestone-dot {
+    left: 2rem;
+  }
+  
+  .cta-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .cta-primary,
+  .cta-secondary {
+    width: 100%;
+    max-width: 300px;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .ceo-hero-container,
+  .ceo-introduction-container,
+  .vision-leadership-container,
+  .achievements-container,
+  .journey-timeline-container,
+  .ceo-cta-container {
+    padding: 0 1rem;
+  }
+  
+  .ceo-hero-container h1 {
+    font-size: 2rem;
+  }
+  
+  .leadership-grid,
+  .achievements-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .vision-card,
+  .achievement-card {
+    padding: 2rem;
+  }
+  
+  .ceo-message-section {
+    padding: 1.5rem;
+  }
+  
+  .rotating-quotes {
+    padding: 1.5rem;
+  }
+} 

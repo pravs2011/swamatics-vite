@@ -2,6 +2,29 @@
 @tailwind components;
 @tailwind utilities;
 
+/* globals.css or index.css */
+:root {
+  --background: 0 0% 100%; /* white */
+  --foreground: 240 10% 3.9%; /* near-black */
+  --primary: 240 100% 60%;
+  --primary-foreground: 0 0% 100%;
+  --secondary: 240 5% 96%;
+  --secondary-foreground: 240 10% 3.9%;
+  --muted: 240 5% 96%;
+  --muted-foreground: 240 4% 46%;
+  --accent: 240 5% 96%;
+  --accent-foreground: 240 10% 3.9%;
+  --destructive: 0 84.2% 60.2%;
+  --destructive-foreground: 0 0% 100%;
+  --border: 240 5% 90%;
+  --input: 240 5% 90%;
+  --ring: 240 10% 3.9%;
+  --card: 0 0% 100%;
+  --card-foreground: 240 10% 3.9%;
+  --radius: 0.5rem;
+}
+
+
 @layer base {
   :root {
     --background: 0 0% 100%;
@@ -68,7 +91,7 @@
  
 @layer base {
   * {
-    @apply border-border;
+    border-color: hsl(var(--border));
   }
   body {
     @apply bg-background text-foreground;

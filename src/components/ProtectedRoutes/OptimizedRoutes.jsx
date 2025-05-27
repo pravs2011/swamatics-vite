@@ -7,15 +7,21 @@ import Unauthorised from "../../pages/404/Unauthorised";
 import * as Pages from "./Pages";
 
 const OptimizedRoutes = () => {
-
   return (
     <Routes>
-      <Route path="/" element={<Pages.HomePage />} />     
+      <Route path="/" element={<Pages.HomePage />} />
+      <Route path="/about" element={<Pages.AboutPage />} />
+      <Route path="/welcome-from-ceo" element={<Pages.WelcomeFromCeo />} />
+      <Route path="/history" element={<Pages.HistoryPage />} />
+      <Route path="/mission-and-vision" element={<Pages.MissionVision />} />
+      <Route path="/introduction" element={<Pages.QualityTesting />} />
+      <Route path="/certificates" element={<Pages.CetificatesPage />} />
+      <Route path="/engineering-design" element={<Pages.EngineeringDesign />} />
+      <Route path="/health-and-safety" element={<Pages.HealthSafety />} />
+      <Route path="/plants" element={<Pages.PlantsPage />} />
       <Route path="/unauthorised" element={<Unauthorised />} />
-    </Routes>  
-  )
-
-}
-
+    </Routes>
+  );
+};
 
 export default OptimizedRoutes;

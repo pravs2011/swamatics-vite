@@ -49,36 +49,8 @@ const TopMenu = () => {
   // Dropdown content data
   const dropdownContent = {
     home: {
-      sections: [
-        {
-          title: "Dashboard",
-          links: [
-            {
-              name: "Analytics",
-              description: "View detailed analytics and insights",
-            },
-            { name: "Reports", description: "Generate comprehensive reports" },
-            {
-              name: "Overview",
-              description: "Get a quick overview of your data",
-            },
-          ],
-        },
-        {
-          title: "Quick Actions",
-          links: [
-            { name: "Create New", description: "Start a new project or task" },
-            {
-              name: "Import Data",
-              description: "Import data from external sources",
-            },
-            {
-              name: "Export",
-              description: "Export your data in various formats",
-            },
-          ],
-        },
-      ],
+      url: "/",
+      sections: [],
     },
     introduction: {
       sections: [

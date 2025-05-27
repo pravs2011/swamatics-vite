@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from "react";
 import logo from "../../assets/images/logo-black.png";
 import "./TopMenu.css";
+import { useNavigate } from "react-router-dom";
 
 const TopMenu = () => {
+  const navigate = useNavigate();
   const [activeDropdown, setActiveDropdown] = useState(null);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
@@ -48,63 +50,66 @@ const TopMenu = () => {
 
   // Dropdown content data
   const dropdownContent = {
-    home: {
-      sections: [
-        {
-          title: "Dashboard",
-          links: [
-            {
-              name: "Analytics",
-              description: "View detailed analytics and insights",
-            },
-            { name: "Reports", description: "Generate comprehensive reports" },
-            {
-              name: "Overview",
-              description: "Get a quick overview of your data",
-            },
-          ],
-        },
-        {
-          title: "Quick Actions",
-          links: [
-            { name: "Create New", description: "Start a new project or task" },
-            {
-              name: "Import Data",
-              description: "Import data from external sources",
-            },
-            {
-              name: "Export",
-              description: "Export your data in various formats",
-            },
-          ],
-        },
-      ],
-    },
     introduction: {
       sections: [
         {
-          title: "Getting Started",
+          title: "About",
           links: [
             {
-              name: "What is Swamatics",
-              description: "Learn about our platform",
+              name: "Welcome From CEO",
+              description: "Message from our Chief Executive Officer",
+              link: "/welcome-from-ceo",
             },
-            { name: "How it Works", description: "Understanding the process" },
-            { name: "Key Features", description: "Explore our main features" },
+            {
+              name: "About Us",
+              description: "Learn about our company and values",
+              link: "/about",
+            },
+            {
+              name: "History",
+              description: "Our company's journey and milestones",
+              link: "/history",
+            },
+            {
+              name: "Mission and Vision",
+              description: "Our mission statement and future vision",
+              link: "/mission-and-vision",
+            },
           ],
         },
         {
-          title: "Learn More",
+          title: "Operations",
           links: [
             {
-              name: "Documentation",
-              description: "Complete user documentation",
+              name: "Plants",
+              description: "Our manufacturing facilities and locations",
+              link: "/plants",
             },
             {
-              name: "Video Tutorials",
-              description: "Step-by-step video guides",
+              name: "Quality And Testing Systems",
+              description: "Our quality assurance and testing processes",
+              link: "/introduction",
             },
-            { name: "FAQ", description: "Frequently asked questions" },
+            {
+              name: "Engineering & Design",
+              description: "Our engineering capabilities and design services",
+              link: "/engineering-design",
+            },
+            {
+              name: "Health and Safety",
+              description: "Our commitment to workplace safety",
+              link: "/health-and-safety",
+            },
+          ],
+        },
+        {
+          title: "Credentials",
+          links: [
+            {
+              name: "Certificates",
+              description: "Our certifications and accreditations",
+              link: "/certificates",
+            },
           ],
         },
       ],
@@ -234,6 +239,12 @@ const TopMenu = () => {
         </button>
 
         <div className={`nav-items ${isMobileMenuOpen ? "mobile-open" : ""}`}>
+          {/* Home - Simple navigation item without dropdown */}
+          <div className="nav-item">
+            <button className="dropdown-button" onClick={() => navigate("/")}>
+              Home
+            </button>
+          </div>
           {Object.keys(dropdownContent).map((key) => (
             <div
               key={key}
@@ -266,7 +277,7 @@ const TopMenu = () => {
                         <ul className="section-links">
                           {section.links.map((link, linkIndex) => (
                             <li key={linkIndex} className="section-link">
-                              <a href="#" className="link-item">
+                              <a href={link.link} className="link-item">
                                 <span className="link-name">{link.name}</span>
                                 <span className="link-description">
                                   {link.description}

@@ -1,5 +1,5 @@
 import { Toaster } from "react-hot-toast";
-import './App.css'
+import "./App.css";
 import OptimizedRoutes from "./components/ProtectedRoutes/OptimizedRoutes";
 
 function App() {
@@ -15,7 +15,7 @@ function App() {
       ></Toaster>
       <OptimizedRoutes />
     </>
-  )
+  );
 }
 
-export default App
+export default App;

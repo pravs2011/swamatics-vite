@@ -1,0 +1,786 @@
+/* Quality Testing Styles */
+
+/* Hero Section */
+.quality-hero-section {
+  position: relative;
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 50%, #60a5fa 100%);
+  overflow: hidden;
+}
+
+.hero-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(30, 58, 138, 0.8);
+  z-index: 2;
+}
+
+.quality-hero-container {
+  position: relative;
+  z-index: 3;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  text-align: center;
+}
+
+.hero-content {
+  color: white;
+}
+
+.hero-badge {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  padding: 0.5rem 1.5rem;
+  border-radius: 50px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  margin-bottom: 1.5rem;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.quality-hero-container h1 {
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
+}
+
+.hero-subtitle {
+  font-size: 1.25rem;
+  line-height: 1.6;
+  opacity: 0.9;
+  max-width: 600px;
+  margin: 0 auto 1rem auto;
+}
+
+.hero-highlights {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.highlight-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.highlight-item svg {
+  font-size: 1.25rem;
+}
+
+/* Quality Features Section */
+.quality-features-section {
+  padding: 6rem 0;
+  background: #f8fafc;
+}
+
+.quality-features-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.section-header h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #1e293b;
+  margin-bottom: 1rem;
+}
+
+.section-header p {
+  font-size: 1.125rem;
+  color: #64748b;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.feature-card {
+  background: white;
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.feature-icon-container {
+  margin-bottom: 1.5rem;
+}
+
+.feature-icon {
+  font-size: 3rem;
+  color: #3b82f6;
+}
+
+.feature-card h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #1e293b;
+  margin-bottom: 1rem;
+}
+
+.feature-card p {
+  color: #64748b;
+  line-height: 1.6;
+}
+
+/* Testing Process Section */
+.testing-process-section {
+  padding: 6rem 0;
+  background: white;
+}
+
+.testing-process-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.process-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  position: relative;
+}
+
+.process-card {
+  background: #f8fafc;
+  padding: 2rem;
+  border-radius: 16px;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.process-card:hover,
+.process-card.active {
+  background: white;
+  border-color: #3b82f6;
+  box-shadow: 0 10px 30px rgba(59, 130, 246, 0.1);
+  transform: translateY(-2px);
+}
+
+.process-step {
+  position: absolute;
+  top: -15px;
+  left: 20px;
+  background: #3b82f6;
+  color: white;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 1.125rem;
+}
+
+.process-content {
+  padding-top: 1rem;
+}
+
+.process-content h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #1e293b;
+  margin-bottom: 1rem;
+}
+
+.process-content p {
+  color: #64748b;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.process-details {
+  background: #eff6ff;
+  padding: 1rem;
+  border-radius: 8px;
+  border-left: 4px solid #3b82f6;
+  margin-top: 1rem;
+}
+
+.process-details span {
+  color: #1e40af;
+  font-size: 0.875rem;
+  font-style: italic;
+}
+
+.process-connector {
+  display: none;
+}
+
+/* Testing Capabilities Section */
+.testing-capabilities-section {
+  padding: 6rem 0;
+  background: #f8fafc;
+}
+
+.testing-capabilities-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.capabilities-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: start;
+}
+
+.capabilities-content h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #1e293b;
+  margin-bottom: 1.5rem;
+}
+
+.capabilities-description {
+  font-size: 1.125rem;
+  color: #64748b;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+.capabilities-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.capability-item {
+  display: flex;
+  align-items: start;
+  gap: 1rem;
+  padding: 1.5rem;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+}
+
+.capability-item:hover {
+  transform: translateX(5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+}
+
+.capability-icon {
+  color: #3b82f6;
+  font-size: 1.5rem;
+  margin-top: 0.25rem;
+}
+
+.capability-content h4 {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #1e293b;
+  margin-bottom: 0.5rem;
+}
+
+.capability-content p {
+  color: #64748b;
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+
+/* Testing Station Card */
+.testing-station-card {
+  background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+  padding: 2rem;
+  border-radius: 20px;
+  border: 1px solid #bfdbfe;
+  position: sticky;
+  top: 2rem;
+}
+
+.station-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.station-icon {
+  font-size: 4rem;
+  color: #3b82f6;
+  margin-bottom: 1rem;
+}
+
+.station-header h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1e293b;
+  margin-bottom: 0.5rem;
+}
+
+.station-header p {
+  color: #64748b;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.stat-item {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+}
+
+.stat-value {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #3b82f6;
+  margin-bottom: 0.5rem;
+}
+
+.stat-label {
+  font-size: 0.875rem;
+  color: #64748b;
+}
+
+/* Certifications Section */
+.certifications-section {
+  padding: 6rem 0;
+  background: #1e293b;
+  color: white;
+}
+
+.certifications-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.certifications-section .section-header h2 {
+  color: white;
+}
+
+.certifications-section .section-header p {
+  color: #94a3b8;
+}
+
+.certifications-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.certification-card {
+  background: #334155;
+  padding: 1.5rem;
+  border-radius: 12px;
+  border: 1px solid #475569;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  transition: all 0.3s ease;
+}
+
+.certification-card:hover {
+  border-color: #3b82f6;
+  background: #3b4252;
+}
+
+.cert-icon {
+  color: #fbbf24;
+  font-size: 1.5rem;
+  flex-shrink: 0;
+}
+
+.certification-card span {
+  font-weight: 500;
+}
+
+/* Quality Philosophy Section */
+.quality-philosophy-section {
+  padding: 6rem 0;
+  background: #eff6ff;
+}
+
+.quality-philosophy-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.philosophy-content {
+  text-align: center;
+}
+
+.philosophy-content h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #1e293b;
+  margin-bottom: 2rem;
+}
+
+.philosophy-text {
+  font-size: 1.125rem;
+  line-height: 1.8;
+  color: #374151;
+}
+
+.philosophy-text p {
+  margin-bottom: 1.5rem;
+}
+
+.opening-quote {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #1e40af;
+  font-style: italic;
+  position: relative;
+  padding: 0 2rem;
+}
+
+.opening-quote::before,
+.opening-quote::after {
+  content: '"';
+  font-size: 3rem;
+  color: #3b82f6;
+  opacity: 0.3;
+  position: absolute;
+  top: -10px;
+}
+
+.opening-quote::before {
+  left: 0;
+}
+
+.opening-quote::after {
+  right: 0;
+}
+
+.closing-quote {
+  font-weight: 600;
+  color: #1e40af;
+  font-style: italic;
+}
+
+/* Quality Team Section */
+.quality-team-section {
+  padding: 6rem 0;
+  background: white;
+}
+
+.quality-team-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 4rem;
+  align-items: start;
+}
+
+.team-content h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #1e293b;
+  margin-bottom: 1.5rem;
+}
+
+.team-content p {
+  font-size: 1.125rem;
+  color: #64748b;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+.team-features {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+.team-feature {
+  display: flex;
+  align-items: start;
+  gap: 1rem;
+}
+
+.team-icon {
+  color: #3b82f6;
+  font-size: 1.5rem;
+  margin-top: 0.25rem;
+  flex-shrink: 0;
+}
+
+.team-feature h4 {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #1e293b;
+  margin-bottom: 0.5rem;
+}
+
+.team-feature p {
+  color: #64748b;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* Witnessing Card */
+.witnessing-card {
+  background: linear-gradient(135deg, #f3f4f6 0%, #e5e7eb 100%);
+  padding: 2rem;
+  border-radius: 20px;
+  text-align: center;
+  position: sticky;
+  top: 2rem;
+}
+
+.witnessing-icon {
+  font-size: 4rem;
+  color: #6b7280;
+  margin-bottom: 1.5rem;
+}
+
+.witnessing-card h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1e293b;
+  margin-bottom: 1rem;
+}
+
+.witnessing-card p {
+  color: #64748b;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.certificate-badge {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+}
+
+.badge-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #3b82f6;
+  margin-bottom: 0.25rem;
+}
+
+.badge-subtitle {
+  font-size: 0.875rem;
+  color: #64748b;
+}
+
+/* Call to Action Section */
+.quality-cta-section {
+  padding: 6rem 0;
+  background: linear-gradient(135deg, #1e40af 0%, #3b82f6 50%, #60a5fa 100%);
+  color: white;
+}
+
+.quality-cta-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  text-align: center;
+}
+
+.cta-content h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+}
+
+.cta-content p {
+  font-size: 1.125rem;
+  line-height: 1.6;
+  opacity: 0.9;
+  margin-bottom: 2rem;
+}
+
+.cta-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.cta-primary,
+.cta-secondary {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem 2rem;
+  border-radius: 12px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.cta-primary {
+  background: white;
+  color: #1e40af;
+}
+
+.cta-primary:hover {
+  background: #f3f4f6;
+  transform: translateY(-2px);
+}
+
+.cta-secondary {
+  background: transparent;
+  color: white;
+  border-color: white;
+}
+
+.cta-secondary:hover {
+  background: white;
+  color: #1e40af;
+  transform: translateY(-2px);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .capabilities-grid,
+  .team-grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .testing-station-card,
+  .witnessing-card {
+    position: static;
+  }
+
+  .team-features {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .quality-hero-container h1 {
+    font-size: 2.5rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1rem;
+  }
+
+  .quality-features-section,
+  .testing-process-section,
+  .testing-capabilities-section,
+  .certifications-section,
+  .quality-philosophy-section,
+  .quality-team-section,
+  .quality-cta-section {
+    padding: 4rem 0;
+  }
+
+  .section-header h2 {
+    font-size: 2rem;
+  }
+
+  .features-grid,
+  .process-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-highlights {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .cta-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .cta-primary,
+  .cta-secondary {
+    width: 100%;
+    max-width: 300px;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .quality-hero-container,
+  .quality-features-container,
+  .testing-process-container,
+  .testing-capabilities-container,
+  .certifications-container,
+  .quality-philosophy-container,
+  .quality-team-container,
+  .quality-cta-container {
+    padding: 0 1rem;
+  }
+
+  .quality-hero-container h1 {
+    font-size: 2rem;
+  }
+
+  .feature-card,
+  .process-card,
+  .testing-station-card,
+  .witnessing-card {
+    padding: 1.5rem;
+  }
+
+  .opening-quote {
+    padding: 0 1rem;
+  }
+} 
