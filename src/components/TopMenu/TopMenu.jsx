@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import logo from "../../assets/images/logo-black.png";
 import "./TopMenu.css";
 import { useNavigate } from "react-router-dom";
@@ -8,6 +8,8 @@ const TopMenu = () => {
   const [activeDropdown, setActiveDropdown] = useState(null);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
+  const dropdownRefs = useRef({});
+  const hoverTimeoutRef = useRef(null);
 
   // Check if device is mobile
   useEffect(() => {
@@ -21,9 +23,13 @@ const TopMenu = () => {
     return () => window.removeEventListener("resize", checkIsMobile);
   }, []);
 
-  const handleDropdownHover = (dropdown) => {
+  const handleDropdownHover = (dropdown, event) => {
     // Only handle hover on desktop
     if (!isMobile) {
+      // Clear any existing timeout
+      if (hoverTimeoutRef.current) {
+        clearTimeout(hoverTimeoutRef.current);
+      }
       setActiveDropdown(dropdown);
     }
   };
@@ -31,8 +37,17 @@ const TopMenu = () => {
   const handleDropdownLeave = () => {
     // Only handle leave on desktop
     if (!isMobile) {
-      setActiveDropdown(null);
+      // Add a small delay before closing to prevent accidental closes
+      hoverTimeoutRef.current = setTimeout(() => {
+        setActiveDropdown(null);
+      }, 150);
     }
+  };
+
+  // Check if dropdown content is scrollable
+  const checkScrollable = (element) => {
+    if (!element) return false;
+    return element.scrollHeight > element.clientHeight;
   };
 
   const handleDropdownClick = (dropdown) => {
@@ -122,42 +137,52 @@ const TopMenu = () => {
             {
               name: "Rotary Twin & Tri Lobe Blowers",
               description: "Rotary Twin & Tri Lobe Blowers",
+              link: "/rotary-piston-blowers",
             },
             {
               name: "Process Gas Blowers",
               description: "Process Gas Blowers/ Gas Boosters",
+              link: "/process-gas-blowers",
             },
             {
               name: "Turbo Blowers",
               description: "Turbo Blowers- Integrally Geared Type",
+              link: "/turbo-blowers",
             },
             {
               name: "Super Helical Hybrid Blower",
               description: "Super Helical Hybrid Blower",
+              link: "/super-helical-hybrid-blower",
             },
             {
               name: "Truck Blowers",
               description: "Truck Blowers",
+              link: "/truck-blowers",
             },
             {
               name: "Bio Gas Blowers",
               description: "Bio Gas Blowers/Compressors",
+              link: "/bio-gas-blowers-compressors",
             },
             {
               name: "Vacuum Pumps",
               description: "Vacuum Pumps With Secondary Suction/Air Injection",
+              link: "/air-injection",
             },
             {
               name: "Rotary Sliding Vane Compressors",
               description: "Rotary Sliding Vane Compressors",
+              link: "/rotary-sliding-vane-compressors",
             },
             {
               name: "Centrifugal Blowers",
               description: "Centrifugal Blowers",
+              link: "/centrifugal-fans-blowers",
             },
             {
               name: "SR Series Blowers",
               description: "SR Series Blowers",
+              link: "/sr-series-blowers",
             },
           ],
         },
@@ -194,20 +219,20 @@ const TopMenu = () => {
             },
           ],
         },
-        // {
-        //   title: "Enterprise",
-        //   links: [
-        //     {
-        //       name: "Team Collaboration",
-        //       description: "Work together seamlessly",
-        //     },
-        //     {
-        //       name: "Advanced Security",
-        //       description: "Enterprise-grade security",
-        //     },
-        //     { name: "Custom Solutions", description: "Tailored to your needs" },
-        //   ],
-        // },
+        {
+          title: "Other Products",
+          links: [
+            {
+              name: "Shell And Tube Type",
+              description: "Shell And Tube Type Heat Exchangers",
+            },
+            {
+              name: "Advanced Security",
+              description: "Enterprise-grade security",
+            },
+            { name: "Custom Solutions", description: "Tailored to your needs" },
+          ],
+        },
       ],
     },
     activities: {
@@ -303,7 +328,7 @@ const TopMenu = () => {
                   ? "mobile-dropdown-active"
                   : ""
               }`}
-              onMouseEnter={() => handleDropdownHover(key)}
+              onMouseEnter={(e) => handleDropdownHover(key, e)}
               onMouseLeave={handleDropdownLeave}
             >
               <button
@@ -319,7 +344,22 @@ const TopMenu = () => {
 
               {((isMobile && isMobileMenuOpen && activeDropdown === key) ||
                 (!isMobile && activeDropdown === key)) && (
-                <div className="mega-dropdown">
+                <div
+                  ref={(el) => {
+                    dropdownRefs.current[key] = el;
+                    if (el && !isMobile) {
+                      setTimeout(() => {
+                        const isScrollable = checkScrollable(el);
+                        if (isScrollable) {
+                          el.classList.add("scrollable");
+                        } else {
+                          el.classList.remove("scrollable");
+                        }
+                      }, 100);
+                    }
+                  }}
+                  className="mega-dropdown"
+                >
                   <div className="mega-dropdown-content">
                     {dropdownContent[key].sections.map((section, index) => (
                       <div key={index} className="mega-section">
@@ -327,7 +367,17 @@ const TopMenu = () => {
                         <ul className="section-links">
                           {section.links.map((link, linkIndex) => (
                             <li key={linkIndex} className="section-link">
-                              <a href={link.link} className="link-item">
+                              <a
+                                href={link.link || "#"}
+                                className="link-item"
+                                onClick={(e) => {
+                                  if (!link.link) {
+                                    e.preventDefault();
+                                  }
+                                  // Close dropdown after click
+                                  setActiveDropdown(null);
+                                }}
+                              >
                                 <span className="link-name">{link.name}</span>
                                 <span className="link-description">
                                   {link.description}

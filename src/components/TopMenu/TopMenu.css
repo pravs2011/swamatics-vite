@@ -219,18 +219,20 @@
 /* Mega Dropdown Styles */
 .mega-dropdown {
   position: absolute;
-  top: 100%;
+  top: calc(100% + 5px);
   left: 50%;
   transform: translateX(-50%);
-  background: rgba(255, 255, 255, 0.95);
+  background: rgba(255, 255, 255, 0.98);
   backdrop-filter: blur(20px);
   border-radius: 1rem;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.3);
   min-width: 600px;
   max-width: 800px;
   width: max-content;
-  z-index: 1000;
+  max-height: calc(100vh - 120px);
+  overflow-y: auto;
+  z-index: 1001;
   opacity: 0;
   visibility: hidden;
   transform: translateX(-50%) translateY(-10px);
@@ -238,11 +240,74 @@
   pointer-events: none;
 }
 
-.nav-item:hover .mega-dropdown {
+.nav-item:hover .mega-dropdown,
+.nav-item .mega-dropdown:hover {
   opacity: 1;
   visibility: visible;
   transform: translateX(-50%) translateY(0);
   pointer-events: auto;
+}
+
+/* Ensure dropdown stays open when hovering over it */
+.mega-dropdown:hover {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+/* Create invisible bridge to prevent hover gaps */
+.nav-item::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  height: 10px;
+  background: transparent;
+  z-index: 1000;
+}
+
+/* Custom scrollbar for mega dropdown */
+.mega-dropdown::-webkit-scrollbar {
+  width: 6px;
+}
+
+.mega-dropdown::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.05);
+  border-radius: 3px;
+}
+
+.mega-dropdown::-webkit-scrollbar-thumb {
+  background: rgba(33, 150, 243, 0.3);
+  border-radius: 3px;
+  transition: background 0.2s ease;
+}
+
+.mega-dropdown::-webkit-scrollbar-thumb:hover {
+  background: rgba(33, 150, 243, 0.5);
+}
+
+.mega-dropdown {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(33, 150, 243, 0.3) rgba(0, 0, 0, 0.05);
+}
+
+/* Scroll indicator for dropdown */
+.mega-dropdown::after {
+  content: '';
+  position: sticky;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 20px;
+  background: linear-gradient(transparent, rgba(255, 255, 255, 0.9));
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.mega-dropdown.scrollable::after {
+  opacity: 1;
 }
 
 .mega-dropdown-content {
@@ -534,8 +599,9 @@
     border-radius: 0 0 1rem 1rem;
     border: 1px solid rgba(255, 255, 255, 0.2);
     border-top: none;
-    max-height: 80vh;
+    max-height: calc(100vh - 100px);
     overflow-y: auto;
+    padding-bottom: 1rem;
   }
 
   /* Smooth scrolling for mobile */
@@ -558,6 +624,29 @@
   }
 }
 
+/* Enhanced hover effects for better UX */
+.nav-item:hover .dropdown-button {
+  background-color: rgba(33, 150, 243, 0.08);
+  color: #2196f3;
+}
+
+/* Improved focus states for accessibility */
+.dropdown-button:focus {
+  outline: 2px solid rgba(33, 150, 243, 0.3);
+  outline-offset: 2px;
+}
+
+.link-item:focus {
+  outline: 2px solid rgba(33, 150, 243, 0.3);
+  outline-offset: 2px;
+}
+
+/* Loading state for dropdown positioning */
+.mega-dropdown.positioning {
+  opacity: 0.5;
+  transform: translateX(-50%) scale(0.95);
+}
+
 @media (max-width: 1024px) {
   .mega-dropdown {
     min-width: 500px;
@@ -567,5 +656,41 @@
   .mega-dropdown-content {
     gap: 1.5rem;
     padding: 1.5rem;
+  }
+}
+
+/* Improved tablet experience */
+@media (max-width: 1024px) and (min-width: 769px) {
+  .mega-dropdown {
+    min-width: 450px;
+    max-width: 550px;
+    max-height: calc(100vh - 140px);
+  }
+  
+  .mega-dropdown-content {
+    gap: 1.25rem;
+    padding: 1.25rem;
+  }
+}
+
+/* Handle dropdown positioning on smaller screens */
+@media (max-width: 1200px) {
+  .mega-dropdown {
+    left: 0;
+    right: 0;
+    transform: none;
+    margin: 0 20px;
+    min-width: auto;
+    max-width: calc(100vw - 40px);
+  }
+}
+
+/* Ensure dropdown is always visible on very small screens */
+@media (max-width: 900px) and (min-width: 769px) {
+  .mega-dropdown {
+    left: 50%;
+    transform: translateX(-50%);
+    min-width: 400px;
+    max-width: 500px;
   }
 } 
