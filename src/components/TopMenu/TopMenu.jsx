@@ -192,30 +192,37 @@ const TopMenu = () => {
             {
               name: "Dry Screw Vacuum Pump",
               description: "Dry Screw Vacuum Pump - Combined Variable Pitch",
+              link: "/dry-screw-vacuum-pump",
             },
             {
               name: "Liquid Ring Vacuum Pump",
               description: "Liquid Ring Vacuum Pump",
+              link: "/liquid-ring-vacuum-pumps",
             },
             {
               name: "Oil Vane Vacuum Pump",
               description: "Oil Vane Vacuum Pump",
+              link: "/oil-vane-vacuum-pump-2",
             },
             {
               name: "Mechanical Vacuum Boosters",
               description: "Mechanical Vacuum Boosters",
+              link: "/mechanical-vacuum-boosters",
             },
             {
               name: "MVR Blowers",
               description: "MVR Blowers",
+              link: "/mvr-blowers",
             },
             {
               name: "Vacuum Systems And Packages",
               description: "Vacuum Systems And Packages",
+              link: "/vacuum-systems-and-packages",
             },
             {
               name: "Condenser Exhausters",
               description: "Condenser Exhausters",
+              link: "/condenser-exhausters",
             },
           ],
         },
@@ -225,12 +232,18 @@ const TopMenu = () => {
             {
               name: "Shell And Tube Type",
               description: "Shell And Tube Type Heat Exchangers",
+              link: "/shell-and-tube-type-heat-exchangers",
             },
             {
               name: "Advanced Security",
               description: "Enterprise-grade security",
+              link: "/shell-and-tube-type-heat-exchangers",
             },
-            { name: "Custom Solutions", description: "Tailored to your needs" },
+            {
+              name: "Custom Solutions",
+              description: "Tailored to your needs",
+              link: "/acoustic-enclosures-and-silencers",
+            },
           ],
         },
       ],
@@ -344,50 +357,53 @@ const TopMenu = () => {
 
               {((isMobile && isMobileMenuOpen && activeDropdown === key) ||
                 (!isMobile && activeDropdown === key)) && (
-                <div
-                  ref={(el) => {
-                    dropdownRefs.current[key] = el;
-                    if (el && !isMobile) {
-                      setTimeout(() => {
-                        const isScrollable = checkScrollable(el);
-                        if (isScrollable) {
-                          el.classList.add("scrollable");
-                        } else {
-                          el.classList.remove("scrollable");
-                        }
-                      }, 100);
-                    }
-                  }}
-                  className="mega-dropdown"
-                >
-                  <div className="mega-dropdown-content">
-                    {dropdownContent[key].sections.map((section, index) => (
-                      <div key={index} className="mega-section">
-                        <h3 className="section-title">{section.title}</h3>
-                        <ul className="section-links">
-                          {section.links.map((link, linkIndex) => (
-                            <li key={linkIndex} className="section-link">
-                              <a
-                                href={link.link || "#"}
-                                className="link-item"
-                                onClick={(e) => {
-                                  if (!link.link) {
-                                    e.preventDefault();
-                                  }
-                                  // Close dropdown after click
-                                  setActiveDropdown(null);
-                                }}
-                              >
-                                <span className="link-name">{link.name}</span>
-                                <span className="link-description">
-                                  {link.description}
-                                </span>
-                              </a>
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-                    ))}
+                <div className="mega-dropdown">
+                  <div className="mega-dropdown-background"></div>
+                  <div
+                    ref={(el) => {
+                      dropdownRefs.current[key] = el;
+                      if (el && !isMobile) {
+                        setTimeout(() => {
+                          const isScrollable = checkScrollable(el);
+                          if (isScrollable) {
+                            el.classList.add("scrollable");
+                          } else {
+                            el.classList.remove("scrollable");
+                          }
+                        }, 100);
+                      }
+                    }}
+                    className="mega-dropdown-scroll-container"
+                  >
+                    <div className="mega-dropdown-content">
+                      {dropdownContent[key].sections.map((section, index) => (
+                        <div key={index} className="mega-section">
+                          <h3 className="section-title">{section.title}</h3>
+                          <ul className="section-links">
+                            {section.links.map((link, linkIndex) => (
+                              <li key={linkIndex} className="section-link">
+                                <a
+                                  href={link.link || "#"}
+                                  className="link-item"
+                                  onClick={(e) => {
+                                    if (!link.link) {
+                                      e.preventDefault();
+                                    }
+                                    // Close dropdown after click
+                                    setActiveDropdown(null);
+                                  }}
+                                >
+                                  <span className="link-name">{link.name}</span>
+                                  <span className="link-description">
+                                    {link.description}
+                                  </span>
+                                </a>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      ))}
+                    </div>
                   </div>
                 </div>
               )}

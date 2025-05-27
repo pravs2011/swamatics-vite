@@ -8,6 +8,7 @@ import CetificatesPage from "../../pages/Certificates/CetificatesPage";
 import EngineeringDesign from "../../pages/EngineeringDesign/EngineeringDesign";
 import HealthSafety from "../../pages/HealthSafety/HealthSafety";
 import PlantsPage from "../../pages/Plants/PlantsPage";
+import RotaryPistonBlowers from "../../pages/RotaryPistonBlowers/RotaryPistonBlowers";
 
 export {
   HomePage,
@@ -20,4 +21,5 @@ export {
   EngineeringDesign,
   HealthSafety,
   PlantsPage,
+  RotaryPistonBlowers,
 };
