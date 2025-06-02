@@ -32,6 +32,7 @@ const OptimizedRoutes = () => {
         path="/super-helical-hybrid-blower"
         element={<Pages.HybridHelicalBlowers />}
       />
+      <Route path="/truck-blowers" element={<Pages.TruckBlowers />} />
       <Route path="/unauthorised" element={<Unauthorised />} />
     </Routes>
   );

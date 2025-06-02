@@ -12,6 +12,7 @@ import RotaryPistonBlowers from "../../pages/RotaryPistonBlower/RotaryPistonBlow
 import ProcessGasBlowers from "../../pages/ProcessGasBlowers/ProcessGasBlowers";
 import TurboBlowers from "../../pages/TurboBlowers/TurboBlowers";
 import HybridHelicalBlowers from "../../pages/HybridHelicalBlowers/HybridHelicalBlowers";
+import TruckBlowers from "../../pages/TruckBlowers/TruckBlowers";
 
 export {
   HomePage,
@@ -28,4 +29,5 @@ export {
   ProcessGasBlowers,
   TurboBlowers,
   HybridHelicalBlowers,
+  TruckBlowers,
 };
