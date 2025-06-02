@@ -146,9 +146,8 @@ const PlantsPage = () => {
           style={{ borderRadius: "1rem", marginTop: "5rem" }}
         >
           <div className="hero-content">
-            <div className="hero-badge" style={{ marginTop: "1rem" }}>
-              Manufacturing Excellence
-            </div>
+            <br />
+            <div className="hero-badge">Manufacturing Excellence</div>
             <h1>Our Manufacturing Plants</h1>
             <p className="hero-subtitle">
               From a single factory in 1980 to 5 state-of-the-art manufacturing
@@ -170,6 +169,7 @@ const PlantsPage = () => {
                 <span>Global Expansion</span>
               </div>
             </div>
+            <br />
           </div>
         </div>
       </section>
@@ -207,7 +207,9 @@ const PlantsPage = () => {
                   <span>{milestone.plants}</span>
                 </div>
                 <div className="timeline-content">
-                  <div className="timeline-year">{milestone.year}</div>
+                  <div className="timeline-year" style={{ color: "#fff" }}>
+                    {milestone.year}
+                  </div>
                   <p>{milestone.description}</p>
                 </div>
               </div>
