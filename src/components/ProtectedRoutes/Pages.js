@@ -8,7 +8,9 @@ import CetificatesPage from "../../pages/Certificates/CetificatesPage";
 import EngineeringDesign from "../../pages/EngineeringDesign/EngineeringDesign";
 import HealthSafety from "../../pages/HealthSafety/HealthSafety";
 import PlantsPage from "../../pages/Plants/PlantsPage";
-import RotaryPistonBlowers from "../../pages/RotaryPistonBlowers/RotaryPistonBlowers";
+import RotaryPistonBlowers from "../../pages/RotaryPistonBlower/RotaryPistonBlowers";
+import ProcessGasBlowers from "../../pages/ProcessGasBlowers/ProcessGasBlowers";
+import TurboBlowers from "../../pages/TurboBlowers/TurboBlowers";
 
 export {
   HomePage,
@@ -22,4 +24,6 @@ export {
   HealthSafety,
   PlantsPage,
   RotaryPistonBlowers,
+  ProcessGasBlowers,
+  TurboBlowers,
 };
