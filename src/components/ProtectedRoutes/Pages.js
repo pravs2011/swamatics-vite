@@ -16,6 +16,7 @@ import TruckBlowers from "../../pages/TruckBlowers/TruckBlowers";
 import BioGasBlowersCompressors from "../../pages/BioGasBlowersCompressors/BioGasBlowersCompressors";
 import AirInjection from "../../pages/AirInjection/AirInjection";
 import SlidingVaneCompressors from "../../pages/SlidingVaneCompressors/SlidingVaneCompressors";
+import CentrifugalFansAndBlowers from "../../pages/CentrifugalFansAndBlowers/CentrifugalFansAndBlowers";
 
 export {
   HomePage,
@@ -36,4 +37,5 @@ export {
   BioGasBlowersCompressors,
   AirInjection,
   SlidingVaneCompressors,
+  CentrifugalFansAndBlowers,
 };
