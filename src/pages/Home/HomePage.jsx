@@ -79,7 +79,7 @@ const HomePage = () => {
                 >
                   <path
                     d="M5 12H19"
-                    stroke="currentColor"
+                    stroke="white"
                     strokeWidth="2"
                     strokeLinecap="round"
                     strokeLinejoin="round"
@@ -1043,7 +1043,7 @@ const HomePage = () => {
                   >
                     <path
                       d="M13 2L3 14H12L11 22L21 10H12L13 2Z"
-                      stroke="currentColor"
+                      stroke="white"
                       strokeWidth="2"
                       strokeLinecap="round"
                       strokeLinejoin="round"
@@ -1069,7 +1069,7 @@ const HomePage = () => {
                   >
                     <path
                       d="M9 11H15M9 15H15M17 21L12 16L7 21V5C7 4.46957 7.21071 3.96086 7.58579 3.58579C7.96086 3.21071 8.46957 3 9 3H15C15.5304 3 16.0391 3.21071 16.4142 3.58579C16.7893 3.96086 17 4.46957 17 5V21Z"
-                      stroke="currentColor"
+                      stroke="white"
                       strokeWidth="2"
                       strokeLinecap="round"
                       strokeLinejoin="round"
@@ -1095,12 +1095,12 @@ const HomePage = () => {
                       cx="12"
                       cy="12"
                       r="3"
-                      stroke="currentColor"
+                      stroke="white"
                       strokeWidth="2"
                     />
                     <path
                       d="M19.4 15A1.65 1.65 0 0 0 20.85 13.35V10.65A1.65 1.65 0 0 0 19.4 9L17.7 7.35A1.65 1.65 0 0 0 15.35 7.35H8.65A1.65 1.65 0 0 0 6.3 7.35L4.6 9A1.65 1.65 0 0 0 3.15 10.65V13.35A1.65 1.65 0 0 0 4.6 15L6.3 16.65A1.65 1.65 0 0 0 8.65 16.65H15.35A1.65 1.65 0 0 0 17.7 16.65L19.4 15Z"
-                      stroke="currentColor"
+                      stroke="white"
                       strokeWidth="2"
                     />
                   </svg>
@@ -1122,7 +1122,7 @@ const HomePage = () => {
                   >
                     <path
                       d="M16 21V19C16 17.9391 15.5786 16.9217 14.8284 16.1716C14.0783 15.4214 13.0609 15 12 15H5C3.93913 15 2.92172 15.4214 2.17157 16.1716C1.42143 16.9217 1 17.9391 1 19V21"
-                      stroke="currentColor"
+                      stroke="white"
                       strokeWidth="2"
                       strokeLinecap="round"
                       strokeLinejoin="round"
@@ -1131,12 +1131,12 @@ const HomePage = () => {
                       cx="8.5"
                       cy="7"
                       r="4"
-                      stroke="currentColor"
+                      stroke="white"
                       strokeWidth="2"
                     />
                     <path
                       d="M20 8V14L17 11"
-                      stroke="currentColor"
+                      stroke="white"
                       strokeWidth="2"
                       strokeLinecap="round"
                       strokeLinejoin="round"
