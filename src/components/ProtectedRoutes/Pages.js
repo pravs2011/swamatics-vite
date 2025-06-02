@@ -13,6 +13,8 @@ import ProcessGasBlowers from "../../pages/ProcessGasBlowers/ProcessGasBlowers";
 import TurboBlowers from "../../pages/TurboBlowers/TurboBlowers";
 import HybridHelicalBlowers from "../../pages/HybridHelicalBlowers/HybridHelicalBlowers";
 import TruckBlowers from "../../pages/TruckBlowers/TruckBlowers";
+import BioGasBlowersCompressors from "../../pages/BioGasBlowersCompressors/BioGasBlowersCompressors";
+import AirInjection from "../../pages/AirInjection/AirInjection";
 
 export {
   HomePage,
@@ -30,4 +32,6 @@ export {
   TurboBlowers,
   HybridHelicalBlowers,
   TruckBlowers,
+  BioGasBlowersCompressors,
+  AirInjection,
 };
