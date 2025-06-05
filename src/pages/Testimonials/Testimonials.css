@@ -1,5 +1,46 @@
 /* Creative Testimonials Page - Cinematic Design */
 
+/* Hide scrollbar while maintaining scroll functionality */
+.testimonials-page-container {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+}
+
+.testimonials-page-container::-webkit-scrollbar {
+  display: none; /* Safari and Chrome */
+}
+
+/* Ensure proper page layout without white space */
+.testimonials-page-container {
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+/* Fix any overflow issues */
+.testimonials-cinematic-hero,
+.featured-testimonial-section,
+.industry-filter-section,
+.testimonials-grid-section,
+.testimonials-cta {
+  width: 100%;
+  position: relative;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/* Prevent horizontal overflow */
+.testimonials-page-container * {
+  box-sizing: border-box;
+}
+
+/* Ensure sections don't create white space */
+.testimonials-cta:last-child {
+  margin-bottom: 0;
+}
+
 /* Cinematic Hero Section */
 .testimonials-cinematic-hero {
   min-height: 100vh;

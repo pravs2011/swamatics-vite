@@ -215,252 +215,255 @@ const Testimonials = () => {
 
   return (
     <MainTemplate>
-      {/* Cinematic Hero Section */}
-      <section className="testimonials-cinematic-hero">
-        <div className="cinematic-bg">
-          <div className="floating-particles">
-            {[...Array(20)].map((_, i) => (
-              <div key={i} className={`particle particle-${i}`} />
-            ))}
-          </div>
-        </div>
-
-        <div className="hero-content-wrapper">
-          <div className="magical-badge">
-            <FaMagic className="magic-icon" />
-            <span>Stories of Transformation</span>
+      <div className="testimonials-page-container">
+        {/* Cinematic Hero Section */}
+        <section className="testimonials-cinematic-hero">
+          <div className="cinematic-bg">
+            <div className="floating-particles">
+              {[...Array(20)].map((_, i) => (
+                <div key={i} className={`particle particle-${i}`} />
+              ))}
+            </div>
           </div>
 
-          <h1 className="cinematic-title">
-            Where <span className="highlight-text">Dreams</span> Meet
-            <br />
-            <span className="gradient-text">Engineering Excellence</span>
-          </h1>
+          <div className="hero-content-wrapper">
+            <div className="magical-badge">
+              <FaMagic className="magic-icon" />
+              <span>Stories of Transformation</span>
+            </div>
 
-          <p className="hero-subtitle">
-            Every testimonial is a journey. Every story is a breakthrough.
-            Discover how SWAM turns industrial challenges into success stories.
-          </p>
+            <h1 className="cinematic-title">
+              Where <span className="highlight-text">Dreams</span> Meet
+              <br />
+              <span className="gradient-text">Engineering Excellence</span>
+            </h1>
 
-          <div className="hero-stats-cosmic">
-            <div className="stat-cosmic">
-              <div className="stat-icon">
-                <FaCrown />
+            <p className="hero-subtitle">
+              Every testimonial is a journey. Every story is a breakthrough.
+              Discover how SWAM turns industrial challenges into success
+              stories.
+            </p>
+
+            <div className="hero-stats-cosmic">
+              <div className="stat-cosmic">
+                <div className="stat-icon">
+                  <FaCrown />
+                </div>
+                <div className="stat-number">500+</div>
+                <div className="stat-label">Success Stories</div>
               </div>
-              <div className="stat-number">500+</div>
-              <div className="stat-label">Success Stories</div>
-            </div>
-            <div className="stat-cosmic">
-              <div className="stat-icon">
-                <FaTrophy />
+              <div className="stat-cosmic">
+                <div className="stat-icon">
+                  <FaTrophy />
+                </div>
+                <div className="stat-number">98%</div>
+                <div className="stat-label">Client Satisfaction</div>
               </div>
-              <div className="stat-number">98%</div>
-              <div className="stat-label">Client Satisfaction</div>
-            </div>
-            <div className="stat-cosmic">
-              <div className="stat-icon">
-                <FaAward />
+              <div className="stat-cosmic">
+                <div className="stat-icon">
+                  <FaAward />
+                </div>
+                <div className="stat-number">15+</div>
+                <div className="stat-label">Industries</div>
               </div>
-              <div className="stat-number">15+</div>
-              <div className="stat-label">Industries</div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Featured Testimonial Carousel */}
-      <section className="featured-testimonial-section">
-        <div className="carousel-container">
-          <div className="carousel-header">
-            <h2>Featured Success Story</h2>
-            <div className="carousel-controls">
-              <button
-                className={`play-pause-btn ${
-                  isAutoPlay ? "playing" : "paused"
-                }`}
-                onClick={() => setIsAutoPlay(!isAutoPlay)}
-              >
-                {isAutoPlay ? <FaPause /> : <FaPlay />}
-              </button>
-              <button className="nav-btn prev-btn" onClick={prevTestimonial}>
-                <FaChevronLeft />
-              </button>
-              <button className="nav-btn next-btn" onClick={nextTestimonial}>
-                <FaChevronRight />
-              </button>
+        {/* Featured Testimonial Carousel */}
+        <section className="featured-testimonial-section">
+          <div className="carousel-container">
+            <div className="carousel-header">
+              <h2>Featured Success Story</h2>
+              <div className="carousel-controls">
+                <button
+                  className={`play-pause-btn ${
+                    isAutoPlay ? "playing" : "paused"
+                  }`}
+                  onClick={() => setIsAutoPlay(!isAutoPlay)}
+                >
+                  {isAutoPlay ? <FaPause /> : <FaPlay />}
+                </button>
+                <button className="nav-btn prev-btn" onClick={prevTestimonial}>
+                  <FaChevronLeft />
+                </button>
+                <button className="nav-btn next-btn" onClick={nextTestimonial}>
+                  <FaChevronRight />
+                </button>
+              </div>
             </div>
-          </div>
 
-          <div
-            className="featured-card"
-            style={{
-              background: `linear-gradient(135deg, ${featuredTestimonial.gradientFrom}, ${featuredTestimonial.gradientTo})`,
-            }}
-          >
             <div
-              className={`pattern-overlay pattern-${featuredTestimonial.bgPattern}`}
-            ></div>
+              className="featured-card"
+              style={{
+                background: `linear-gradient(135deg, ${featuredTestimonial.gradientFrom}, ${featuredTestimonial.gradientTo})`,
+              }}
+            >
+              <div
+                className={`pattern-overlay pattern-${featuredTestimonial.bgPattern}`}
+              ></div>
 
-            <div className="featured-content">
-              <div className="testimonial-header">
-                <div className="customer-avatar">
-                  <img
-                    src={featuredTestimonial.avatar}
-                    alt={featuredTestimonial.name}
-                  />
-                  <div className="avatar-ring"></div>
-                </div>
+              <div className="featured-content">
+                <div className="testimonial-header">
+                  <div className="customer-avatar">
+                    <img
+                      src={featuredTestimonial.avatar}
+                      alt={featuredTestimonial.name}
+                    />
+                    <div className="avatar-ring"></div>
+                  </div>
 
-                <div className="customer-info">
-                  <h3>{featuredTestimonial.name}</h3>
-                  <p className="title">{featuredTestimonial.title}</p>
-                  <p className="company">{featuredTestimonial.company}</p>
-                  <div className="rating-stars">
-                    {renderStars(featuredTestimonial.rating)}
+                  <div className="customer-info">
+                    <h3>{featuredTestimonial.name}</h3>
+                    <p className="title">{featuredTestimonial.title}</p>
+                    <p className="company">{featuredTestimonial.company}</p>
+                    <div className="rating-stars">
+                      {renderStars(featuredTestimonial.rating)}
+                    </div>
+                  </div>
+
+                  <div className="testimonial-icon">
+                    {featuredTestimonial.icon}
                   </div>
                 </div>
 
-                <div className="testimonial-icon">
-                  {featuredTestimonial.icon}
+                <div className="quote-section">
+                  <FaQuoteLeft className="quote-mark" />
+                  <blockquote>{featuredTestimonial.quote}</blockquote>
                 </div>
-              </div>
 
-              <div className="quote-section">
-                <FaQuoteLeft className="quote-mark" />
-                <blockquote>{featuredTestimonial.quote}</blockquote>
-              </div>
+                <div className="story-section">
+                  <p>{featuredTestimonial.story}</p>
+                </div>
 
-              <div className="story-section">
-                <p>{featuredTestimonial.story}</p>
-              </div>
-
-              <div className="testimonial-metrics">
-                <div className="metric">
-                  <FaMapMarkerAlt />
-                  <span>{featuredTestimonial.location}</span>
-                </div>
-                <div className="metric">
-                  <FaCalendarAlt />
-                  <span>{featuredTestimonial.date}</span>
-                </div>
-                <div className="metric impact">
-                  <FaBolt />
-                  <span>{featuredTestimonial.impact}</span>
-                </div>
-                <div className="metric">
-                  <FaMedal />
-                  <span>{featuredTestimonial.experience}</span>
+                <div className="testimonial-metrics">
+                  <div className="metric">
+                    <FaMapMarkerAlt />
+                    <span>{featuredTestimonial.location}</span>
+                  </div>
+                  <div className="metric">
+                    <FaCalendarAlt />
+                    <span>{featuredTestimonial.date}</span>
+                  </div>
+                  <div className="metric impact">
+                    <FaBolt />
+                    <span>{featuredTestimonial.impact}</span>
+                  </div>
+                  <div className="metric">
+                    <FaMedal />
+                    <span>{featuredTestimonial.experience}</span>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
 
-          <div className="carousel-dots">
-            {testimonialsData.map((_, index) => (
-              <button
-                key={index}
-                className={`dot ${
-                  index === currentTestimonial ? "active" : ""
-                }`}
-                onClick={() => setCurrentTestimonial(index)}
-              />
-            ))}
+            <div className="carousel-dots">
+              {testimonialsData.map((_, index) => (
+                <button
+                  key={index}
+                  className={`dot ${
+                    index === currentTestimonial ? "active" : ""
+                  }`}
+                  onClick={() => setCurrentTestimonial(index)}
+                />
+              ))}
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Industry Filter Section */}
-      <section className="industry-filter-section">
-        <div className="filter-container">
-          <h3>Explore by Industry</h3>
-          <div className="industry-pills">
-            {industries.map((industry) => (
-              <button
-                key={industry}
-                className={`industry-pill ${
-                  selectedIndustry === industry ? "active" : ""
-                }`}
-                onClick={() => setSelectedIndustry(industry)}
-              >
-                {industry === "all" ? "All Stories" : industry}
-              </button>
-            ))}
+        {/* Industry Filter Section */}
+        <section className="industry-filter-section">
+          <div className="filter-container">
+            <h3>Explore by Industry</h3>
+            <div className="industry-pills">
+              {industries.map((industry) => (
+                <button
+                  key={industry}
+                  className={`industry-pill ${
+                    selectedIndustry === industry ? "active" : ""
+                  }`}
+                  onClick={() => setSelectedIndustry(industry)}
+                >
+                  {industry === "all" ? "All Stories" : industry}
+                </button>
+              ))}
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Testimonials Grid */}
-      <section className="testimonials-grid-section">
-        <div className="grid-container">
-          <div className="testimonials-masonry">
-            {getFilteredTestimonials().map((testimonial, index) => (
-              <div
-                key={testimonial.id}
-                className={`testimonial-tile ${
-                  hoveredCard === testimonial.id ? "hovered" : ""
-                }`}
-                onMouseEnter={() => setHoveredCard(testimonial.id)}
-                onMouseLeave={() => setHoveredCard(null)}
-                style={{
-                  background: `linear-gradient(135deg, ${testimonial.gradientFrom}, ${testimonial.gradientTo})`,
-                }}
-              >
+        {/* Testimonials Grid */}
+        <section className="testimonials-grid-section">
+          <div className="grid-container">
+            <div className="testimonials-masonry">
+              {getFilteredTestimonials().map((testimonial, index) => (
                 <div
-                  className={`tile-pattern pattern-${testimonial.bgPattern}`}
-                ></div>
+                  key={testimonial.id}
+                  className={`testimonial-tile ${
+                    hoveredCard === testimonial.id ? "hovered" : ""
+                  }`}
+                  onMouseEnter={() => setHoveredCard(testimonial.id)}
+                  onMouseLeave={() => setHoveredCard(null)}
+                  style={{
+                    background: `linear-gradient(135deg, ${testimonial.gradientFrom}, ${testimonial.gradientTo})`,
+                  }}
+                >
+                  <div
+                    className={`tile-pattern pattern-${testimonial.bgPattern}`}
+                  ></div>
 
-                <div className="tile-header">
-                  <div className="industry-badge">
-                    {testimonial.icon}
-                    <span>{testimonial.industry}</span>
+                  <div className="tile-header">
+                    <div className="industry-badge">
+                      {testimonial.icon}
+                      <span>{testimonial.industry}</span>
+                    </div>
+                    <div className="rating-mini">
+                      {renderStars(testimonial.rating)}
+                    </div>
                   </div>
-                  <div className="rating-mini">
-                    {renderStars(testimonial.rating)}
+
+                  <div className="tile-content">
+                    <h4 className="tile-quote">"{testimonial.quote}"</h4>
+
+                    <div className="customer-mini">
+                      <img src={testimonial.avatar} alt={testimonial.name} />
+                      <div>
+                        <p className="name">{testimonial.name}</p>
+                        <p className="company">{testimonial.company}</p>
+                      </div>
+                    </div>
                   </div>
-                </div>
 
-                <div className="tile-content">
-                  <h4 className="tile-quote">"{testimonial.quote}"</h4>
-
-                  <div className="customer-mini">
-                    <img src={testimonial.avatar} alt={testimonial.name} />
-                    <div>
-                      <p className="name">{testimonial.name}</p>
-                      <p className="company">{testimonial.company}</p>
+                  <div className="tile-footer">
+                    <div className="impact-badge">
+                      <FaLightbulb />
+                      <span>{testimonial.impact}</span>
                     </div>
                   </div>
                 </div>
-
-                <div className="tile-footer">
-                  <div className="impact-badge">
-                    <FaLightbulb />
-                    <span>{testimonial.impact}</span>
-                  </div>
-                </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Call to Action */}
-      <section className="testimonials-cta">
-        <div className="cta-cosmic">
-          <div className="cta-glow"></div>
-          <div className="cta-content">
-            <FaRocket className="cta-icon" />
-            <h2>Ready to Create Your Success Story?</h2>
-            <p>
-              Join the ranks of industry leaders who chose transformation over
-              tradition.
-            </p>
-            <button className="cta-button">
-              <span>Start Your Journey</span>
-              <div className="button-glow"></div>
-            </button>
+        {/* Call to Action */}
+        <section className="testimonials-cta">
+          <div className="cta-cosmic">
+            <div className="cta-glow"></div>
+            <div className="cta-content">
+              <FaRocket className="cta-icon" />
+              <h2>Ready to Create Your Success Story?</h2>
+              <p>
+                Join the ranks of industry leaders who chose transformation over
+                tradition.
+              </p>
+              <button className="cta-button">
+                <span>Start Your Journey</span>
+                <div className="button-glow"></div>
+              </button>
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      </div>
     </MainTemplate>
   );
 };
