@@ -235,13 +235,8 @@ const TopMenu = () => {
               link: "/shell-and-tube-type-heat-exchangers",
             },
             {
-              name: "Advanced Security",
-              description: "Enterprise-grade security",
-              link: "/shell-and-tube-type-heat-exchangers",
-            },
-            {
-              name: "Custom Solutions",
-              description: "Tailored to your needs",
+              name: "Acoustic Enclosures & Silencers",
+              description: "Acoustic Enclosures And Silencers",
               link: "/acoustic-enclosures-and-silencers",
             },
           ],
@@ -251,30 +246,22 @@ const TopMenu = () => {
     activities: {
       sections: [
         {
-          title: "Recent Activities",
+          title: "Activities",
           links: [
             {
-              name: "Project Updates",
-              description: "Latest project developments",
+              name: "Events",
+              description: "Events",
+              link: "/events",
             },
-            { name: "System Logs", description: "System activity and logs" },
             {
-              name: "User Activities",
-              description: "User interaction history",
+              name: "Testimonials",
+              description: "Testimonials",
+              link: "/testimonials",
             },
-          ],
-        },
-        {
-          title: "Scheduled",
-          links: [
             {
-              name: "Upcoming Events",
-              description: "Scheduled events and tasks",
-            },
-            { name: "Maintenance", description: "Planned system maintenance" },
-            {
-              name: "Reminders",
-              description: "Important reminders and alerts",
+              name: "Awards",
+              description: "Awards",
+              link: "/awards",
             },
           ],
         },

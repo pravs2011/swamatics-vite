@@ -20,6 +20,17 @@ import CentrifugalFansAndBlowers from "../../pages/CentrifugalFansAndBlowers/Cen
 import SRSeriesBlowers from "../../pages/SRSeriesBlowers/SRSeriesBlowers";
 import DryScrewVaccumPump from "../../pages/DryScrewVaccumPump/DryScrewVaccumPump";
 import LiquidRingVaccumPumps from "../../pages/LiquidRingVaccumPumps/LiquidRingVaccumPumps";
+import OilVaneVacuumPump from "../../pages/OilVaneVacuumPump/OilVaneVacuumPump";
+import MechanicalVaccumBoosters from "../../pages/MechanicalVaccumBoosters/MechanicalVaccumBoosters";
+import MVRBlowers from "../../pages/MVRBlowers/MVRBlowers";
+import VaccumSystemsPackages from "../../pages/VaccumSystemsPackages/VaccumSystemsPackages";
+import CondenserExhausters from "../../pages/CondenserExhausters/CondenserExhausters";
+import ShellTubeHeatExchangers from "../../pages/ShellTubeHeatExchangers/ShellTubeHeatExchangers";
+import AcousticEnclosuresSilencers from "../../pages/AcousticEnclosuresSilencers/AcousticEnclosuresSilencers";
+import Events from "../../pages/Events/Events";
+import Testimonials from "../../pages/Testimonials/Testimonials";
+import Awards from "../../pages/Awards/Awards";
+import ContactUs from "../../pages/ContactUs/ContactUs";
 
 export {
   HomePage,
@@ -44,4 +55,15 @@ export {
   SRSeriesBlowers,
   DryScrewVaccumPump,
   LiquidRingVaccumPumps,
+  OilVaneVacuumPump,
+  MechanicalVaccumBoosters,
+  MVRBlowers,
+  VaccumSystemsPackages,
+  CondenserExhausters,
+  ShellTubeHeatExchangers,
+  AcousticEnclosuresSilencers,
+  Events,
+  Testimonials,
+  Awards,
+  ContactUs,
 };

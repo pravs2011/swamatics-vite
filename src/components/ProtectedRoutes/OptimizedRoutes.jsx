@@ -55,6 +55,35 @@ const OptimizedRoutes = () => {
         path="/liquid-ring-vacuum-pumps"
         element={<Pages.LiquidRingVaccumPumps />}
       />
+      <Route
+        path="/oil-vane-vacuum-pump-2"
+        element={<Pages.OilVaneVacuumPump />}
+      />
+      <Route
+        path="/mechanical-vacuum-boosters"
+        element={<Pages.MechanicalVaccumBoosters />}
+      />
+      <Route path="/mvr-blowers" element={<Pages.MVRBlowers />} />
+      <Route
+        path="/vacuum-systems-and-packages"
+        element={<Pages.VaccumSystemsPackages />}
+      />
+      <Route
+        path="/condenser-exhausters"
+        element={<Pages.CondenserExhausters />}
+      />
+      <Route
+        path="/shell-and-tube-type-heat-exchangers"
+        element={<Pages.ShellTubeHeatExchangers />}
+      />
+      <Route
+        path="/acoustic-enclosures-and-silencers"
+        element={<Pages.AcousticEnclosuresSilencers />}
+      />
+      <Route path="/events" element={<Pages.Events />} />
+      <Route path="/testimonials" element={<Pages.Testimonials />} />
+      <Route path="/awards" element={<Pages.Awards />} />
+      <Route path="/contact-us" element={<Pages.ContactUs />} />
       <Route path="/unauthorised" element={<Unauthorised />} />
     </Routes>
   );
