@@ -19,6 +19,7 @@ import SlidingVaneCompressors from "../../pages/SlidingVaneCompressors/SlidingVa
 import CentrifugalFansAndBlowers from "../../pages/CentrifugalFansAndBlowers/CentrifugalFansAndBlowers";
 import SRSeriesBlowers from "../../pages/SRSeriesBlowers/SRSeriesBlowers";
 import DryScrewVaccumPump from "../../pages/DryScrewVaccumPump/DryScrewVaccumPump";
+import LiquidRingVaccumPumps from "../../pages/LiquidRingVaccumPumps/LiquidRingVaccumPumps";
 
 export {
   HomePage,
@@ -42,4 +43,5 @@ export {
   CentrifugalFansAndBlowers,
   SRSeriesBlowers,
   DryScrewVaccumPump,
+  LiquidRingVaccumPumps,
 };
